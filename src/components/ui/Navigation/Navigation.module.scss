@@ -1,0 +1,56 @@
+.menu {
+  @apply flex items-center justify-between gap-x-[40px] h-full;
+
+  @screen desktopXL {
+    @apply gap-x-[30px];
+  }
+
+  @screen desktop {
+    @apply hidden;
+  }
+}
+
+.menuMobile {
+  @apply flex flex-col justify-center items-center gap-y-3 w-full h-[220px];
+
+  @screen tablet {
+    @apply top-[60px];
+  }
+}
+
+.link {
+  @apply font-title font-bold text-white text-xl transitionAll will-change-transform active:scale-99;
+  border-bottom: 3px solid transparent;
+
+  @screen desktop2XL {
+    @apply text-lg;
+  }
+
+  @screen tabletMin {
+    @apply hover:border-peach hover:text-peach;
+  }
+
+  @screen tablet {
+    @apply text-base;
+  }
+
+  @screen mobile2XL {
+    @apply text-sm;
+  }
+}
+
+.linkActive {
+  @apply text-peach border-peach;
+}
+
+.icon {
+  @apply hidden w-[30px] h-[30px] fill-white cursor-pointer;
+
+  @screen desktop {
+    @apply block;
+  }
+
+  @screen mobileXL {
+    @apply w-[22px] h-[22px];
+  }
+}

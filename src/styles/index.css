@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-size: 16px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  @apply relative font-title font-bold text-base text-lightDark bg-white;
+}
+
+img {
+  display: block;
+}
+
+main {
+  @apply grow py-[50px];
+
+  @screen tablet {
+    @apply py-[40px];
+  }
+
+  @screen mobile2XL {
+    @apply py-[30px];
+  }
+}
+
+button,
+input,
+select {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+  @apply bg-lightDark w-[8px];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-peach rounded-[4px];
+}
+
+:-moz-focusring {
+  outline: none;
+}
+
+.app {
+  @apply flex flex-col min-h-full;
+}
+
+.container {
+  @apply max-w-[1475px] my-0 mx-auto px-[20px];
+
+  @screen tablet {
+    @apply px-[15px];
+  }
+
+  @screen mobile2XL {
+    @apply px-[10px];
+  }
+}
+
+.section {
+  @apply pb-[50px];
+
+  @screen tablet {
+    @apply pb-[40px];
+  }
+
+  @screen mobile2XL {
+    @apply pb-[30px];
+  }
+}
