@@ -1,0 +1,65 @@
+.logo {
+  @apply h-full w-[300px] fill-white transitionIcon;
+
+  @screen desktop {
+    @apply w-[260px];
+  }
+
+  @screen tabletMin {
+    @apply hover:fill-peach;
+  }
+
+  @screen mobile2XL {
+    @apply w-[200px];
+  }
+}
+
+.navbar {
+  @apply w-full pt-[28px];
+}
+
+.menu {
+  @apply flex flex-col gap-y-3 w-full h-full;
+
+  @screen tablet {
+    @apply top-[60px];
+  }
+}
+
+.link {
+  @apply flex items-center gap-x-[15px] w-full px-[20px] font-title font-bold text-white text-xl;
+  transition: all 0.3s ease-in-out;
+
+  @screen desktop2XL {
+    @apply text-lg;
+  }
+
+  @screen tabletMin {
+    @apply hover:bg-white hover:text-peach;
+  }
+
+  @screen tablet {
+    @apply text-base;
+  }
+
+  @screen mobile2XL {
+    @apply text-sm;
+  }
+}
+
+.linkActive {
+  @apply flex items-center gap-x-[15px] w-full px-[20px] font-title font-bold  text-xl bg-white text-peach;
+  transition: all 0.3s ease-in-out;
+
+  @screen desktop2XL {
+    @apply text-lg;
+  }
+
+  @screen tablet {
+    @apply text-base;
+  }
+
+  @screen mobile2XL {
+    @apply text-sm;
+  }
+}

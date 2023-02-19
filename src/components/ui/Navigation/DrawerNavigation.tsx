@@ -14,7 +14,7 @@ const StylesDrawer = styled(Drawer)({
     alignItems: "center",
     justifyContent: "flex-start",
     paddingTop: "130px",
-    width: "200px",
+    width: "300px",
     height: "100%",
     backgroundColor: "#1b2f52",
     borderRadius: "10px 0 0 10px",
@@ -34,7 +34,6 @@ export const DrawerNavigation: FC = () => {
           onClick={() => setIsDrawerOpen(true)}
         />
       )}
-      <div>sss</div>
       <StylesDrawer
         anchor="right"
         open={isDrawerOpen}

@@ -1,0 +1,24 @@
+.contacts {
+  @apply flex flex-col items-start gap-y-[15px] w-full pt-[25px] border-t-[3px] border-white border-solid;
+}
+
+.link {
+  @apply flex items-center gap-x-[15px] mx-[20px] font-title font-normal text-white text-xl;
+  transition: all 0.3s ease-in-out;
+
+  @screen desktop2XL {
+    @apply text-lg;
+  }
+
+  @screen tabletMin {
+    @apply hover:text-peach;
+  }
+
+  @screen tablet {
+    @apply text-base;
+  }
+
+  @screen mobile2XL {
+    @apply text-sm;
+  }
+}

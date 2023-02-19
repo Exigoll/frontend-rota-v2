@@ -1,0 +1,53 @@
+.search {
+  @apply flex items-center justify-between w-full max-w-[600px] h-[40px] text-base font-medium;
+
+  @screen desktop {
+    @apply text-sm;
+  }
+
+  @screen tablet {
+    @apply order-3 max-w-full mx-auto my-0;
+  }
+
+  input {
+    @apply max-w-[560px] w-full h-full px-[20px] border-[3px] border-solid border-transparent text-base  text-lightDark bg-white  focus:boxShadow focus:border-peach;
+    border-radius: 10px 0px 0px 10px;
+    transition: all 0.3s ease;
+
+    @screen desktop2XL {
+    }
+
+    @screen desktop {
+      @apply px-[15px];
+    }
+
+    @screen tabletMin {
+      @apply hover:border-peach hover:boxShadow;
+    }
+
+    @screen tablet {
+      @apply max-w-full;
+    }
+
+    &::placeholder {
+      @apply text-placeholder text-base font-bold;
+
+      @screen desktop {
+        @apply text-sm;
+      }
+    }
+  }
+
+  button {
+    @apply flex items-center justify-center max-w-[60px] w-full h-full bg-peach cursor-pointer will-change-transform active:scale-99 transitionButton;
+    border-radius: 0 10px 10px 0;
+
+    @screen tabletMin {
+      @apply hover:bg-darkPeach;
+    }
+
+    svg {
+      @apply fill-white w-[24px] h-[24px];
+    }
+  }
+}
