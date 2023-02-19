@@ -17,10 +17,6 @@ const StylesDrawer = styled(Drawer)({
     top: "112px",
   },
 
-  "@media (max-width: 490px)": {
-    top: "110px",
-  },
-
   "& .MuiDrawer-paper": {
     top: "70px",
     display: "flex",
@@ -36,20 +32,12 @@ const StylesDrawer = styled(Drawer)({
     "@media (max-width: 768px)": {
       top: "112px",
     },
-
-    "@media (max-width: 490px)": {
-      top: "110px",
-    },
   },
   "& .MuiModal-backdrop": {
     top: "70px",
 
     "@media (max-width: 768px)": {
       top: "112px",
-    },
-
-    "@media (max-width: 490px)": {
-      top: "110px",
     },
   },
 });
