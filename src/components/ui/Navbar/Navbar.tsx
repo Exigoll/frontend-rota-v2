@@ -23,7 +23,7 @@ const StylesDrawer = styled(Drawer)({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     rowGap: "28px",
-    width: "300px",
+    width: "340px",
     height: "100%",
     backgroundColor: "#1b2f52",
     borderRadius: "0",

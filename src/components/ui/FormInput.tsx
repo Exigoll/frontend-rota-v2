@@ -14,6 +14,11 @@ const StyledTextField = styled(TextField)({
       fontSize: "14px",
     },
   },
+  "& .MuiInputBase-input": {
+    "@media (max-width: 490px)": {
+      fontSize: "14px",
+    },
+  },
 
   "@media (max-width: 768px)": {
     width: "320px",

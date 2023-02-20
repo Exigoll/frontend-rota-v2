@@ -1,15 +1,14 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
   Checkbox,
-  FormControl,
   FormControlLabel,
   FormGroup,
-  InputLabel,
   MenuItem,
   Select,
+  TextField,
   styled,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 
 import { FormInput } from "@/components/ui/FormInput";
@@ -18,23 +17,37 @@ import { RegistrationFormSchema } from "@/utils/validations";
 
 import styles from "./Registration.module.scss";
 
-const StyledSelect = styled(Select)({
-  width: "360px",
-  height: "40px",
-  borderRadius: "4px",
-
+const StyledSelect = styled(TextField)({
   "@media (max-width: 768px)": {
     width: "320px",
   },
 
   "@media (max-width: 490px)": {
     width: "280px",
-    fontSize: "14px",
+  },
+  "& .MuiOutlinedInput-root": {
+    height: "40px",
+  },
+  "& .MuiInputLabel-root": {
+    top: "-7px",
+
+    "@media (max-width: 490px)": {
+      fontSize: "14px",
+    },
+  },
+  "& .MuiSelect-select": {
+    "@media (max-width: 490px)": {
+      fontSize: "14px",
+    },
   },
 });
 
 const StyledFormControlLabel = styled(FormControlLabel)({
   height: "30px",
+
+  "& .MuiFormLabel-root.MuiInputLabel-root": {
+    top: "-7px",
+  },
 
   "& .MuiFormControlLabel-label": {
     fontSize: "14px",
@@ -48,6 +61,17 @@ export const RegistrationPage: React.FC = () => {
   });
 
   const onSubmit = (data: any) => console.log(data);
+
+  const [selectOne, setSelectOne] = React.useState("");
+  const [selectTwo, setSelectTwo] = React.useState("");
+
+  const handleChangeOne = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectOne(event.target.value as string);
+  };
+
+  const handleChangeTwo = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectTwo(event.target.value as string);
+  };
 
   return (
     <section>
@@ -67,37 +91,30 @@ export const RegistrationPage: React.FC = () => {
                 name="Дополнительный номер телефона"
                 label="Дополнительный номер телефона"
               />
-              <FormControl>
-                <InputLabel id="demo-simple-select-label">
-                  Организационно-правовая форма
-                </InputLabel>
-                <StyledSelect
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  label={"Организационно-правовая форма"}
-                  value={1}
-                >
-                  <MenuItem value={1}>ООО</MenuItem>
-                  <MenuItem value={2}>ИП</MenuItem>
-                </StyledSelect>
-              </FormControl>
-              <FormControl>
-                <InputLabel id="demo-simple-select-label">
-                  Сфера деятельности
-                </InputLabel>
-                <StyledSelect
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  label={"Сфера деятельности"}
-                  value={1}
-                >
-                  <MenuItem value={1}>Интернет-магазин</MenuItem>
-                  <MenuItem value={2}>СТО</MenuItem>
-                  <MenuItem value={3}>Розничный магазин</MenuItem>
-                  <MenuItem value={4}>Прочее</MenuItem>
-                  <MenuItem value={5}>ИП</MenuItem>
-                </StyledSelect>
-              </FormControl>
+
+              <StyledSelect
+                fullWidth
+                value={selectOne}
+                label="Организационно-правовая форма"
+                select
+                onChange={handleChangeOne}
+              >
+                <MenuItem value={"ООО"}>ООО</MenuItem>
+                <MenuItem value={"ИП"}>ИП</MenuItem>
+              </StyledSelect>
+              <StyledSelect
+                fullWidth
+                value={selectTwo}
+                label="Сфера деятельности"
+                select
+                onChange={handleChangeTwo}
+              >
+                <MenuItem value={1}>Интернет-магазин</MenuItem>
+                <MenuItem value={2}>СТО</MenuItem>
+                <MenuItem value={3}>Розничный магазин</MenuItem>
+                <MenuItem value={4}>Прочее</MenuItem>
+                <MenuItem value={5}>ИП</MenuItem>
+              </StyledSelect>
               <FormInput name="Пароль" label="Пароль" />
               <FormInput name="Повторите пароль" label="Повторите пароль" />
               <FormInput name="Адрес доставки" label="Адрес доставки" />
