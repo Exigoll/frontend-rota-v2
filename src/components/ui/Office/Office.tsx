@@ -59,6 +59,9 @@ const StyledDialog = styled(Dialog)({
     maxWidth: "100%",
     margin: "0 auto",
   },
+  "& .MuiDialogContent-root": {
+    borderRadius: "20px",
+  },
 });
 
 export const Office: React.FC<IOffice> = ({
