@@ -1,17 +1,11 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import {
-  Button,
-  Dialog,
-  DialogContent,
-  TextField,
-  styled,
-} from "@mui/material";
+import { Button, Dialog, DialogContent, styled } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-import { LoginFormSchema } from "@/utils/validations";
+import { FormInput } from "@/components/ui/FormInput";
 
-import { FormInput } from "../FormInput";
+import { LoginFormSchema } from "@/utils/validations";
 
 import styles from "./Office.module.scss";
 
@@ -57,10 +51,13 @@ const StyledButton = styled(Button)({
 });
 
 const StyledDialog = styled(Dialog)({
+  "& .MuiDialog-container": {
+    marginRight: "8px",
+  },
   "& .MuiDialog-paper": {
     borderRadius: "20px",
     maxWidth: "100%",
-    marginRight: "38px",
+    margin: "0 auto",
   },
 });
 
@@ -79,11 +76,7 @@ export const Office: React.FC<IOffice> = ({
   return (
     <>
       <StyledButton onClick={openAuthDialog}>Войти</StyledButton>
-      <StyledDialog
-        open={visible}
-        onClose={onClose}
-        aria-labelledby="responsive-dialog-title"
-      >
+      <StyledDialog open={visible} onClose={onClose}>
         <DialogContent sx={{ padding: 0 }}>
           <div className={styles.modal}>
             <h3 className="titleSection">Авторизация</h3>

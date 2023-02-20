@@ -1,16 +1,12 @@
-.loginModal {
-  display: none;
-}
-
 .modal {
-  @apply flex flex-col items-center justify-center gap-y-[35px] w-[520px] h-[425px] px-[10px] rounded-[4px] bg-white;
+  @apply flex flex-col items-center justify-center gap-y-[35px] w-[520px] h-full px-[10px] py-[50px] bg-white;
 
   @screen tablet {
-    @apply rounded-[15px] h-[380px] gap-y-[25px];
+    @apply gap-y-[25px] w-[420px];
   }
 
   @screen mobile2XL {
-    @apply rounded-[10px];
+    @apply w-[360px];
   }
 }
 
@@ -18,11 +14,11 @@
   @apply flex flex-col items-center justify-center gap-y-[30px] max-w-[360px] w-full;
 
   @screen tablet {
-    @apply gap-y-[25px];
+    @apply gap-y-[25px] max-w-[320px];
   }
 
   @screen mobile2XL {
-    @apply gap-y-[20px];
+    @apply gap-y-[20px] max-w-[280px];
   }
 }
 

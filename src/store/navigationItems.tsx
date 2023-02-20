@@ -15,6 +15,11 @@ export const links = [
     path: "/provider",
     icon: <LocalShipping />,
   },
-  { id: 3, title: "Покупателям", path: "/wholesale", icon: <PeopleAlt /> },
+  {
+    id: 3,
+    title: "Оптовым покупателям",
+    path: "/wholesale",
+    icon: <PeopleAlt />,
+  },
   { id: 4, title: "Контакты", path: "/contacts", icon: <LiveHelp /> },
 ];

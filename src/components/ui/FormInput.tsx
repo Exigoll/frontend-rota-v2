@@ -9,6 +9,19 @@ interface IFormInput {
 const StyledTextField = styled(TextField)({
   width: "360px",
   borderRadius: "10px",
+  "& .MuiFormLabel-root": {
+    "@media (max-width: 490px)": {
+      fontSize: "14px",
+    },
+  },
+
+  "@media (max-width: 768px)": {
+    width: "320px",
+  },
+
+  "@media (max-width: 490px)": {
+    width: "280px",
+  },
 });
 
 export const FormInput: React.FC<IFormInput> = ({ name, label }) => {

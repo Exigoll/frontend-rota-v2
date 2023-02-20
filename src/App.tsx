@@ -2,7 +2,6 @@ import { AboutPage } from "pages/AboutPage/AboutPage";
 import { Route, Routes } from "react-router-dom";
 
 import { Header } from "./components/layout/Header";
-import "./styles/App.css";
 import { ContactsPage } from "@/pages/ContactsPage";
 import { HomePage } from "@/pages/HomePage";
 import { ProviderPage } from "@/pages/ProviderPage";
