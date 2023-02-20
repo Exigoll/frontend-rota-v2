@@ -52,7 +52,7 @@ const StyledButton = styled(Button)({
 
 const StyledDialog = styled(Dialog)({
   "& .MuiDialog-container": {
-    marginRight: "8px",
+    borderRadius: "20px",
   },
   "& .MuiDialog-paper": {
     borderRadius: "20px",
