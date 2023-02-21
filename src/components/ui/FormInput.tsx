@@ -1,47 +1,33 @@
-import { TextField, styled } from "@mui/material";
 import { useFormContext } from "react-hook-form";
+
+import { StyledInput } from "@/components/styledComponents";
 
 interface IFormInput {
   name: string;
   label: string;
+  type: string;
+  select?: boolean;
+  defaultValue?: string;
+  children?: React.ReactNode;
 }
 
-const StyledTextField = styled(TextField)({
-  width: "360px",
-  borderRadius: "10px",
-  "& .MuiFormLabel-root": {
-    "@media (max-width: 490px)": {
-      fontSize: "14px",
-    },
-  },
-  "& .MuiInputBase-input": {
-    "@media (max-width: 490px)": {
-      fontSize: "14px",
-    },
-  },
-
-  "@media (max-width: 768px)": {
-    width: "320px",
-  },
-
-  "@media (max-width: 490px)": {
-    width: "280px",
-  },
-});
-
-export const FormInput: React.FC<IFormInput> = ({ name, label }) => {
+export const FormInput: React.FC<IFormInput> = ({ ...FormInput }) => {
   const { register, formState } = useFormContext();
 
   return (
-    <StyledTextField
-      {...register(name)}
-      helperText={formState.errors[name]?.message?.toString()}
-      error={!!formState.errors[name]?.message}
+    <StyledInput
+      {...register(FormInput.name)}
+      helperText={formState.errors[FormInput.name]?.message?.toString()}
+      error={!!formState.errors[FormInput.name]?.message}
       size="small"
-      label={label}
+      label={FormInput.label}
       variant="outlined"
-      type="email"
-      name={name}
-    />
+      type={FormInput.type}
+      name={FormInput.name}
+      select={FormInput.select}
+      defaultValue={FormInput.defaultValue}
+    >
+      {FormInput.children}
+    </StyledInput>
   );
 };
