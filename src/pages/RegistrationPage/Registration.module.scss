@@ -2,11 +2,12 @@
   @apply flex flex-col items-center justify-center gap-y-[35px] py-[50px] max-w-[520px] w-full h-full mx-auto rounded-[20px] bg-white boxShadow;
 
   @screen tablet {
-    @apply gap-y-[30px] py-[40px] rounded-[15px];
+    @apply gap-y-[30px] max-w-[420px] py-[40px] rounded-[15px];
   }
 
   @screen mobile2XL {
     @apply gap-y-[25px] py-[30px] rounded-[10px];
+    box-shadow: none;
   }
 }
 
@@ -14,11 +15,11 @@
   @apply flex flex-col items-center justify-center gap-y-[30px] max-w-[380px] w-full h-full px-[10px];
 
   @screen tablet {
-    @apply gap-y-[25px];
+    @apply gap-y-[25px] max-w-[340px];
   }
 
   @screen mobile2XL {
-    @apply gap-y-[20px];
+    @apply gap-y-[20px] max-w-[300px];
   }
 }
 
