@@ -1,4 +1,4 @@
-import { MailOutline, Phone } from "@mui/icons-material";
+import { MailOutline, Phone, Room } from "@mui/icons-material";
 import { FC, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
@@ -65,13 +65,21 @@ export const Navbar: FC = () => {
             ))}
           </ul>
           <div className={styles.contacts}>
-            <Link className={styles.contactLink} to="tel:+79029999999">
+            <Link className={styles.contactLink} to="tel:+79163934369">
               <Phone />
-              8-902-999-99-99
+              8-916-393-43-69
             </Link>
             <Link className={styles.contactLink} to="mailto:info@rotazap.ru">
               <MailOutline />
               info@rotazap.ru
+            </Link>
+            <Link
+              className={styles.contactLink}
+              to="https://yandex.ru/maps/-/CCUG56vKPD"
+              target="__blank"
+            >
+              <Room />
+              141068, М.О. г. Королёв, мкр. Текстильщик, ул. Южная, д.3
             </Link>
           </div>
         </nav>

@@ -52,7 +52,7 @@ select {
 }
 
 .app {
-  @apply flex flex-col min-h-full;
+  @apply flex flex-col min-h-[100vh];
 }
 
 .container {

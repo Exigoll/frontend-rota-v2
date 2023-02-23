@@ -15,7 +15,7 @@ import { WholesalePage } from "@/pages/WholesalePage";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Header />
       <main>
         <Routes>

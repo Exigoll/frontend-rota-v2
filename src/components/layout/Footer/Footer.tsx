@@ -4,8 +4,8 @@ import styles from "./Footer.module.scss";
 
 export const Footer: React.FC = () => {
   return (
-    <footer>
-      <h1>Footer</h1>
+    <footer className={styles.footer}>
+      <p>© 2023 ROTAZAP.RU - Интернет-магазин запчастей для иномарок</p>
     </footer>
   );
 };
