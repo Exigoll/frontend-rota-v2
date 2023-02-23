@@ -15,7 +15,11 @@
 }
 
 .navbar {
-  @apply w-full flex flex-col pt-[40px] pb-[160px];
+  @apply w-full flex flex-col pt-[28px] pb-[100px];
+
+  @screen tablet {
+    @apply pt-[24px];
+  }
 }
 
 .menu {

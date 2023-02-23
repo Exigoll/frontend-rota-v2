@@ -120,11 +120,6 @@ export const StyledCheckbox = styled(FormControlLabel)({
   "& .MuiFormControlLabel-label": {
     fontSize: "14px",
     lineHeight: "14px",
-
-    /* "@media (max-width: 768px)": {
-      fontSize: "12px",
-      lineHeight: "12px",
-    }, */
   },
 
   "& .MuiSvgIcon-root": {
