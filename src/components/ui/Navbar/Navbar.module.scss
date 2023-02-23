@@ -15,7 +15,7 @@
 }
 
 .navbar {
-  @apply w-full flex flex-col pt-[40px];
+  @apply w-full min-h-[600px] flex flex-col pt-[40px];
 }
 
 .menu {
@@ -27,7 +27,7 @@
 }
 
 .menuService {
-  @apply  border-b-[2px] border-t-[2px] border-white border-solid my-[19px] py-[19px];
+  @apply border-b-[2px] border-t-[2px] border-white border-solid my-[19px] py-[19px];
 }
 
 .link {
