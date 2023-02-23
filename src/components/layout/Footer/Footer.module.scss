@@ -1,3 +1,11 @@
 .footer {
-  @apply flex flex-col justify-center items-center h-[50px] bg-darkBlue text-white font-normal;
+  @apply flex flex-col justify-center items-center h-[50px] bg-darkBlue;
+}
+
+.text {
+  @apply text-white text-base font-normal text-center;
+
+  @screen tablet {
+    @apply text-sm;
+  }
 }
