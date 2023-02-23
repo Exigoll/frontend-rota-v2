@@ -1,11 +1,11 @@
+import { MailOutline, Phone } from "@mui/icons-material";
 import { FC, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 import { IconLogo } from "@/components/icons";
 import { StyledMenuOpen, StylesDrawer } from "@/components/styledComponents";
-import { Contacts } from "@/components/ui/Contacts";
 
-import { links } from "@/store/navigationItems";
+import { navLinks, serviceLinks } from "@/store/navItems";
 
 import styles from "./Navbar.module.scss";
 
@@ -33,23 +33,48 @@ export const Navbar: FC = () => {
       >
         <nav className={styles.navbar}>
           <ul className={styles.menu}>
-            {links.map(({ ...links }) => (
-              <li key={links.id}>
+            {navLinks.map(({ ...navLinks }) => (
+              <li key={navLinks.id}>
                 <NavLink
                   onClick={() => setIsDrawerOpen(false)}
                   className={({ isActive }) =>
                     isActive ? styles.linkActive : styles.link
                   }
-                  to={links.path}
+                  to={navLinks.path}
                 >
-                  {links.icon}
-                  {links.title}
+                  {navLinks.icon}
+                  {navLinks.title}
                 </NavLink>
               </li>
             ))}
           </ul>
+          <ul className={`${styles.menu} ${styles.menuService}`}>
+            {serviceLinks.map(({ ...serviceLinks }) => (
+              <li key={serviceLinks.id}>
+                <NavLink
+                  onClick={() => setIsDrawerOpen(false)}
+                  className={({ isActive }) =>
+                    isActive ? styles.linkActive : styles.link
+                  }
+                  to={serviceLinks.path}
+                >
+                  {serviceLinks.icon}
+                  {serviceLinks.title}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+          <div className={styles.contacts}>
+            <Link className={styles.contactLink} to="tel:+79029999999">
+              <Phone />
+              8-902-999-99-99
+            </Link>
+            <Link className={styles.contactLink} to="mailto:info@rotazap.ru">
+              <MailOutline />
+              info@rotazap.ru
+            </Link>
+          </div>
         </nav>
-        <Contacts />
       </StylesDrawer>
     </>
   );

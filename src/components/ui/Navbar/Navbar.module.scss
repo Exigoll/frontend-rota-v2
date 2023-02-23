@@ -15,15 +15,19 @@
 }
 
 .navbar {
-  @apply w-full pt-[28px];
+  @apply w-full flex flex-col pt-[40px];
 }
 
 .menu {
-  @apply flex flex-col gap-y-3 w-full h-full;
+  @apply flex flex-col gap-y-3 w-full;
 
   @screen tablet {
     @apply top-[60px];
   }
+}
+
+.menuService {
+  @apply  border-b-[2px] border-t-[2px] border-white border-solid my-[19px] py-[19px];
 }
 
 .link {
@@ -53,6 +57,32 @@
 
   @screen desktop2XL {
     @apply text-lg;
+  }
+
+  @screen tablet {
+    @apply text-base;
+  }
+
+  @screen mobile2XL {
+    @apply text-sm;
+  }
+}
+
+// Contacts
+.contacts {
+  @apply flex flex-col items-start gap-y-[15px] w-full;
+}
+
+.contactLink {
+  @apply flex items-center gap-x-[15px] mx-[20px] font-title font-normal text-white text-xl;
+  transition: all 0.3s ease-in-out;
+
+  @screen desktop2XL {
+    @apply text-lg;
+  }
+
+  @screen tabletMin {
+    @apply hover:text-peach;
   }
 
   @screen tablet {

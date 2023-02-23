@@ -1,7 +1,9 @@
 import { AboutPage } from "pages/AboutPage/AboutPage";
 import { Route, Routes } from "react-router-dom";
 
-import { Header } from "./components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Header } from "@/components/layout/Header";
+
 import { ContactsPage } from "@/pages/ContactsPage";
 import { HomePage } from "@/pages/HomePage";
 import { ProviderPage } from "@/pages/ProviderPage";
@@ -22,6 +24,7 @@ function App() {
           <Route path="registration" element={<RegistrationPage />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }
