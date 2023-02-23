@@ -1,3 +1,7 @@
+.officeWrapper {
+  @apply flex justify-end w-full max-w-[345px];
+}
+
 .modal {
   @apply flex flex-col items-center justify-center gap-y-[35px] w-[520px] h-full px-[10px] py-[50px] bg-white;
 

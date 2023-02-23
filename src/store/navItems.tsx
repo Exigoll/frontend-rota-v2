@@ -1,12 +1,12 @@
 import {
+  DonutSmall,
   Home,
   ImportContacts,
   LiveHelp,
   LocalShipping,
   PeopleAlt,
-  DonutSmall,
+  Sync,
   WorkspacePremium,
-  Sync
 } from "@mui/icons-material";
 
 export const navLinks = [
@@ -29,7 +29,12 @@ export const navLinks = [
 
 export const serviceLinks = [
   { id: 0, title: "Доставка", path: "/delivery", icon: <LocalShipping /> },
-  { id: 1, title: "Гарантия и возврат", path: "/warrantyReturn", icon: <WorkspacePremium /> },
+  {
+    id: 1,
+    title: "Гарантия и возврат",
+    path: "/warrantyReturn",
+    icon: <WorkspacePremium />,
+  },
   {
     id: 2,
     title: "ЭДО",

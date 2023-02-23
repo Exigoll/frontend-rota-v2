@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
 
-export default function DeliveryPage() {
-	return (
-		<div>
-			<h1>DeliveryPage</h1>
-		</div>
-	);
-}
+import styles from "./DeliveryPage.module.scss";
+
+export const DeliveryPage: React.FC = () => {
+  return (
+    <div>
+      <h1>DeliveryPage</h1>
+    </div>
+  );
+};
