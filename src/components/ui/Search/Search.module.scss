@@ -6,7 +6,7 @@
   }
 
   @screen tablet {
-    @apply order-3 max-w-full mx-auto my-0;
+    @apply order-3 max-w-full /* mx-auto my-0 */ m-0;
   }
 
   input {

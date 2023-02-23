@@ -32,7 +32,9 @@ export const Office: React.FC<IOffice> = ({
 
   return (
     <>
-      <StyledButtonOffice onClick={openAuthDialog}>Войти</StyledButtonOffice>
+      <div className={styles.officeWrapper}>
+        <StyledButtonOffice onClick={openAuthDialog}>Войти</StyledButtonOffice>
+      </div>
       <StyledPopupOffice open={visible} onClose={onClose}>
         <DialogContent sx={{ padding: 0 }}>
           <div className={styles.modal}>
