@@ -1,7 +1,11 @@
+import { BrandsCar } from "@/components/ui/BrandsCar";
+import { InfoSlider } from "@/components/ui/InfoSlider";
+
 export const HomePage: React.FC = () => {
   return (
-    <div>
-      <h1>HomePage</h1>
-    </div>
+    <>
+      <BrandsCar />
+      <InfoSlider />
+    </>
   );
 };
