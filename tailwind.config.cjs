@@ -24,7 +24,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				title: ["'Inter', sans-serif"],
-				text: ["'Roboto Mono', monospace"],
+				text: ["'Roboto', sans-serif"],
 			},
 			colors: {
 				black: "#000000",

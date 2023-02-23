@@ -141,7 +141,7 @@ export const StylesDrawer = styled(Drawer)({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     rowGap: "28px",
-    width: "340px",
+    width: "360px",
     height: "100%",
     backgroundColor: "#1b2f52",
     borderRadius: "0",
@@ -149,6 +149,10 @@ export const StylesDrawer = styled(Drawer)({
 
     "@media (max-width: 768px)": {
       top: "112px",
+    },
+
+    "@media (max-width: 490px)": {
+      width: "100%",
     },
   },
   "& .MuiModal-backdrop": {

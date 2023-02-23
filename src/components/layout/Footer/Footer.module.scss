@@ -3,7 +3,7 @@
 }
 
 .text {
-  @apply text-white text-base font-normal text-center;
+  @apply text-white font-text text-base font-normal text-center;
 
   @screen tablet {
     @apply text-sm;
