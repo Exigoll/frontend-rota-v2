@@ -5,7 +5,7 @@ export const HomePage: React.FC = () => {
   return (
     <>
       <BrandsCar />
-      {/* <InfoSlider /> */}
+      <InfoSlider />
     </>
   );
 };

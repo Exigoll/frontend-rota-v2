@@ -78,37 +78,28 @@ select {
 .swiper-pagination {
   bottom: 2% !important;
   height: 20px !important;
-  //@include adaptive-value("height", 20, 10, 1);
 
-  @media (max-width: em(560)) {
-    bottom: 1% !important;
+  @screen tablet {
+    height: 16px !important;
   }
-  @media (max-width: em(375)) {
-    bottom: 0 !important;
+
+  @screen mobile {
+    height: 14px !important;
   }
 
   &-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: red;
-    //@include adaptive-value-desktop("width", 12, 10, 1);
-    //@include adaptive-value-desktop("height", 12, 10, 1);
-    //background-color: $colorWhite;
+    @apply w-[16px] h-[16px] bg-white;
 
-    @media (max-width: em(1024)) {
-      //@include adaptive-value-tablet("width", 10, 8, 0);
-      //@include adaptive-value-tablet("height", 10, 8, 0);
+    @screen desktop2XL {
+      @apply w-[12px] h-[12px];
     }
 
-    @media (max-width: em(768)) {
-      //@include adaptive-value-mobile("width", 8, 5, 0);
-      //@include adaptive-value-mobile("height", 8, 5, 0);
+    @screen tablet {
+      @apply w-[10px] h-[10px];
     }
 
-    @media (max-width: em(320)) {
-      width: 5px;
-      height: 5px;
-      margin: 0 2px !important;
+    @screen mobile {
+      @apply w-[5px] h-[5px] mx-[2px] my-0;
     }
   }
 }

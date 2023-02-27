@@ -36,7 +36,7 @@ module.exports = {
 				peach: "#e77c58",
 				darkPeach: "#f76435",
 				placeholder: "rgba(0, 0, 0, 0.3)",
-				overlay: "rgba(0, 0, 0, 0.9)"
+				overlay: "rgb(0 0 0 / 50%)"
 			},
 			scale: {
 				99: "0.99",

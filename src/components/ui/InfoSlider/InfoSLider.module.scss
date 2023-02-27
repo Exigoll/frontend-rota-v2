@@ -1,126 +1,61 @@
 .sliderWrapper {
-  @apply w-full h-[400px];
-  border-radius: 20px;
+  @apply max-w-[1435px] h-[400px] rounded-[20px];
+
+  @screen desktop {
+    @apply h-[350px];
+  }
+
+  @screen tablet {
+    @apply h-[250px];
+  }
+
+  @screen mobile2XL {
+    @apply h-[200px];
+  }
+
+  @screen mobile {
+    @apply h-[180px];
+  }
 }
 
 .slide {
-  position: relative;
-  text-align: center;
-  font-size: 18px;
-  width: 100%;
-  height: 100%;
-  //background: $colorWhite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  //@include adaptive-value("border-radius", 20, 10, 1);
+  @apply relative flex justify-center items-center text-center w-full h-full bg-white rounded-[20px];
 
-  /* &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0 0 0 / 50%);
-    //@include adaptive-value("border-radius", 20, 10, 1);
-  } */
+  @apply after:content-[""] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-overlay after:rounded-[20px];
 }
 
-.slideImg {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
+.slide {
+  @apply w-full h-full rounded-[20px];
+}
 
-  //@include adaptive-value-desktop("height", 440, 380, 1);
-
-  //@include adaptive-value("border-radius", 20, 10, 1);
+.image {
+  @apply w-full h-full;
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 20px;
-  }
-
-  @media (max-width: em(1024)) {
-    //@include adaptive-value-tablet("height", 380, 320, 0);
-  }
-
-  @media (max-width: em(768)) {
-    //@include adaptive-value-mobile("height", 320, 140, 0);
-  }
-
-  @media (max-width: em(320)) {
-    height: 140px;
+    @apply w-full h-full object-cover object-center rounded-[20px];
   }
 }
 
-.textSlider {
-  position: absolute;
-  bottom: 10%;
-  left: 3%;
-  max-width: 55%;
-  //color: $colorWhite;
-  //@include adaptive-value-desktop("font-size", 40, 28, 1);
-  //@include adaptive-value-desktop("line-height", 48, 34, 1);
-  text-align: left;
-  font-weight: 700;
-  z-index: 2;
+.text {
+  @apply absolute bottom-[10%] left-[3%] max-w-[55%] text-white text-4xl text-left font-bold z-[2];
 
-  @media (max-width: em(1024)) {
-    //@include adaptive-value-tablet("font-size", 28, 24, 0);
-    //@include adaptive-value-tablet("line-height", 34, 29, 0);
+  @screen desktop {
+    @apply text-3xl;
   }
 
-  @media (max-width: em(768)) {
-    max-width: 60%;
-    //@include adaptive-value-mobile("font-size", 24, 12, 0);
-    //@include adaptive-value-mobile("line-height", 29, 14, 0);
+  @screen tabletXL {
+    @apply text-2xl;
   }
 
-  @media (max-width: em(320)) {
-    max-width: 70%;
-    font-size: 12px;
-    line-height: 14px;
-  }
-}
-
-.pagination {
-  bottom: 2% !important;
-  height: 20px !important;
-  //@include adaptive-value("height", 20, 10, 1);
-
-  @media (max-width: em(560)) {
-    bottom: 1% !important;
-  }
-  @media (max-width: em(375)) {
-    bottom: 0 !important;
+  @screen tablet {
+    @apply text-xl;
   }
 
-  &-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: red;
-    //@include adaptive-value-desktop("width", 12, 10, 1);
-    //@include adaptive-value-desktop("height", 12, 10, 1);
+  @screen mobile2XL {
+    @apply text-lg max-w-[70%];
+  }
 
-    @media (max-width: em(1024)) {
-      //@include adaptive-value-tablet("width", 10, 8, 0);
-      //@include adaptive-value-tablet("height", 10, 8, 0);
-    }
-
-    @media (max-width: em(768)) {
-      //@include adaptive-value-mobile("width", 8, 5, 0);
-      //@include adaptive-value-mobile("height", 8, 5, 0);
-    }
-
-    @media (max-width: em(320)) {
-      width: 5px;
-      height: 5px;
-      margin: 0 2px !important;
-    }
+  @screen mobile {
+    @apply text-base max-w-[85%];
   }
 }

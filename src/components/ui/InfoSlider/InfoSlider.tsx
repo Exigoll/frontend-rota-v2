@@ -16,10 +16,8 @@ export const InfoSlider: React.FC = () => {
         spaceBetween={30}
         loop={true}
         allowTouchMove={true}
-        freeMode={true}
-        speed={4000}
+        speed={3000}
         slidesPerView={1}
-        centeredSlides={true}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
@@ -33,10 +31,10 @@ export const InfoSlider: React.FC = () => {
         {sliderItems.map((item) => (
           <SwiperSlide key={item.id}>
             <div className={styles.slide}>
-              <picture className={styles.slideImg}>
+              <div className={styles.image}>
                 <img src={item.pathImg} alt="Image" />
-              </picture>
-              <p className={styles.textSlider}>{item.title}</p>
+              </div>
+              <p className={styles.text}>{item.title}</p>
             </div>
           </SwiperSlide>
         ))}
