@@ -1,5 +1,5 @@
 .slider {
-  @apply max-w-[1435px] h-[400px] rounded-[20px];
+  @apply max-w-[1435px] h-[400px] rounded-[20px] cursor-pointer;
 
   @screen desktop {
     @apply h-[350px];
