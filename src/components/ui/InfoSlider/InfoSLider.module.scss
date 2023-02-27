@@ -24,10 +24,6 @@
   @apply after:content-[""] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-overlay after:rounded-[20px];
 }
 
-.slide {
-  @apply w-full h-full rounded-[20px];
-}
-
 .image {
   @apply w-full h-full;
 
