@@ -1,18 +1,18 @@
 import React from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
 
-//import "swiper/swiper.css";
 import { sliderItems } from "@/store/sliderItems";
 
-import styles from "./InfoSlider.module.scss";
+//import styles from "./InfoSlider.module.scss";
 
 export const InfoSlider: React.FC = () => {
   return (
     <section className="container section">
       <Swiper
         modules={[Pagination, Autoplay]}
-        className={styles.slider}
+        //className={styles.slider}
         spaceBetween={30}
         loop={true}
         allowTouchMove={true}
@@ -29,11 +29,11 @@ export const InfoSlider: React.FC = () => {
         }}
       >
         {sliderItems.map((item) => (
-          <SwiperSlide key={item.id} className={styles.slide}>
-            <div className={styles.image}>
+          <SwiperSlide key={item.id} /* className={styles.slide} */>
+            <div /* className={styles.image} */>
               <img src={item.pathImg} alt="Image" />
             </div>
-            <p className={styles.text}>{item.title}</p>
+            <p /* className={styles.text} */>{item.title}</p>
           </SwiperSlide>
         ))}
       </Swiper>
