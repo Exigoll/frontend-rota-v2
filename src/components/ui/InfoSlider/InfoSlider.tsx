@@ -1,7 +1,7 @@
 import React from "react";
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.min.css";
+import "swiper/swiper.css";
 
 import { sliderItems } from "@/store/sliderItems";
 
