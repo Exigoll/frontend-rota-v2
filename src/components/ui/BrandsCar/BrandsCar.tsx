@@ -9,11 +9,11 @@ export const BrandsCar: React.FC = () => {
   return (
     <section className="section container">
       <ul className={styles.categoryContainer}>
-        {brandsCarItem.map((obj) => (
-          <li>
-            <Link to={obj.path} key={obj.id} className={styles.link}>
-              {obj.icon}
-              <h3>{obj.title}</h3>
+        {brandsCarItem.map((item) => (
+          <li key={item.id}>
+            <Link to={item.path} key={item.id} className={styles.link}>
+              {item.icon}
+              <h3>{item.title}</h3>
             </Link>
           </li>
         ))}

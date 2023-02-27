@@ -165,8 +165,8 @@ export const StylesDrawer = styled(Drawer)({
 });
 
 export const StyledMenuOpen = styled(MenuOpen)({
-  width: "40px",
-  height: "40px",
+  width: "44px",
+  height: "44px",
   fill: "white",
   cursor: "pointer",
   transition: "all 0.3s ease-in-out",
@@ -178,7 +178,7 @@ export const StyledMenuOpen = styled(MenuOpen)({
   },
 
   "@media (max-width: 490px)": {
-    width: "30px",
-    height: "30px",
+    width: "40px",
+    height: "40px",
   },
 });

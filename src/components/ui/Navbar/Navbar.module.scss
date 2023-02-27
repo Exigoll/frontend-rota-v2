@@ -78,7 +78,7 @@
 }
 
 .contactLink {
-  @apply flex items-center gap-x-[15px] mx-[20px] font-title font-normal text-white text-xl;
+  @apply flex items-center gap-x-[15px] mx-[20px] font-normal text-white text-base font-text;
   transition: all 0.3s ease-in-out;
 
   @screen desktop2XL {

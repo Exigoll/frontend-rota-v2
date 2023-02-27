@@ -74,3 +74,41 @@ select {
     @apply pb-[30px];
   }
 }
+
+.swiper-pagination {
+  bottom: 2% !important;
+  height: 20px !important;
+  //@include adaptive-value("height", 20, 10, 1);
+
+  @media (max-width: em(560)) {
+    bottom: 1% !important;
+  }
+  @media (max-width: em(375)) {
+    bottom: 0 !important;
+  }
+
+  &-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    //@include adaptive-value-desktop("width", 12, 10, 1);
+    //@include adaptive-value-desktop("height", 12, 10, 1);
+    //background-color: $colorWhite;
+
+    @media (max-width: em(1024)) {
+      //@include adaptive-value-tablet("width", 10, 8, 0);
+      //@include adaptive-value-tablet("height", 10, 8, 0);
+    }
+
+    @media (max-width: em(768)) {
+      //@include adaptive-value-mobile("width", 8, 5, 0);
+      //@include adaptive-value-mobile("height", 8, 5, 0);
+    }
+
+    @media (max-width: em(320)) {
+      width: 5px;
+      height: 5px;
+      margin: 0 2px !important;
+    }
+  }
+}

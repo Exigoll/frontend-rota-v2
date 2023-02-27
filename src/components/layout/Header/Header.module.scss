@@ -1,11 +1,11 @@
 .header {
-  @apply sticky top-0 flex items-center justify-between gap-x-[30px] w-full h-[70px] px-[20px] py-[10px] bg-darkBlue z-[100];
+  @apply sticky top-0 flex items-center justify-between gap-x-[30px] w-full h-[70px] pr-[20px] py-[10px] bg-darkBlue z-[100];
 
   @screen tablet {
-    @apply flex-wrap gap-y-[10px] h-[112px] px-[15px];
+    @apply flex-wrap gap-y-[10px] h-[112px] pr-[15px];
   }
 
   @screen mobile2XL {
-    @apply px-[10px];
+    @apply pr-[10px];
   }
 }
