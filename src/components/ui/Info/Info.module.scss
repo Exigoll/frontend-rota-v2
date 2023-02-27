@@ -18,6 +18,10 @@
   }
 }
 
+.sliderLazy {
+  @apply bg-darkBlue;
+}
+
 .slide {
   @apply relative flex justify-center items-center text-center w-full h-full bg-white rounded-[20px];
 

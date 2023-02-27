@@ -16,6 +16,7 @@ export const InfoSlider: React.FC = () => {
         spaceBetween={30}
         loop={true}
         allowTouchMove={true}
+        lazyPreloaderClass=".swiper-lazy-preloader"
         //speed={3000}
         slidesPerView={1}
         /* autoplay={{
