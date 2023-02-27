@@ -9,10 +9,10 @@ import styles from "./InfoSlider.module.scss";
 
 export const InfoSlider: React.FC = () => {
   return (
-    <section className={`${styles.slider} container section`}>
+    <section className="container section">
       <Swiper
         modules={[Pagination, Autoplay]}
-        className={styles.sliderWrapper}
+        className={styles.slider}
         spaceBetween={30}
         loop={true}
         allowTouchMove={true}
@@ -29,13 +29,11 @@ export const InfoSlider: React.FC = () => {
         }}
       >
         {sliderItems.map((item) => (
-          <SwiperSlide key={item.id}>
-            <div className={styles.slide}>
-              <div className={styles.image}>
-                <img src={item.pathImg} alt="Image" />
-              </div>
-              <p className={styles.text}>{item.title}</p>
+          <SwiperSlide key={item.id} className={styles.slide}>
+            <div className={styles.image}>
+              <img src={item.pathImg} alt="Image" />
             </div>
+            <p className={styles.text}>{item.title}</p>
           </SwiperSlide>
         ))}
       </Swiper>
