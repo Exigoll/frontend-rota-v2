@@ -1,53 +1,43 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Checkbox, FormGroup, MenuItem } from "@mui/material";
+import { Alert, Checkbox, FormGroup, MenuItem } from "@mui/material";
+import { setCookie } from "nookies";
 import { FC, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 
 import { StyledCheckbox } from "@/components/styledComponents";
 import { FormInput } from "@/components/ui/FormInput";
 
-import { RegistrationFormSchema } from "@/utils/validations";
+import { selectValue } from "@/store/selectValue";
+
+import { UserApi } from "@/utils/api";
+import { CreateUserDto } from "@/utils/api/types";
+import { FormDataRegister, RegisterFormSchema } from "@/utils/validations";
 
 import styles from "./Registration.module.scss";
 
-const selectValue = [
-  [
-    {
-      value: "ООО",
-      label: "ООО",
-    },
-    {
-      value: "ИП",
-      label: "ИП",
-    },
-  ],
-  [
-    {
-      value: "Интернет-магазин",
-      label: "Интернет-магазин",
-    },
-    {
-      value: "СТО",
-      label: "СТО",
-    },
-    {
-      value: "Розничный магазин",
-      label: "Розничный магазин",
-    },
-    {
-      value: "Прочее",
-      label: "Прочее",
-    },
-  ],
-];
-
 export const RegistrationPage: FC = () => {
-  const form = useForm({
-    resolver: yupResolver(RegistrationFormSchema),
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const form = useForm<FormDataRegister>({
+    resolver: yupResolver(RegisterFormSchema),
     mode: "onBlur",
   });
 
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = async (dto: CreateUserDto) => {
+    try {
+      const data = await UserApi.register(dto);
+      console.log(data);
+      setCookie(null, "token", data.token, {
+        maxAge: 30 * 24 * 60 * 60,
+        path: "/",
+      });
+      setErrorMessage("");
+    } catch (err: any) {
+      if (err.response) {
+        setErrorMessage(err.response.data.message);
+      }
+    }
+  };
 
   return (
     <section>
@@ -57,18 +47,8 @@ export const RegistrationPage: FC = () => {
           <form className={styles.form} onSubmit={form.handleSubmit(onSubmit)}>
             <div className={styles.inputsContainer}>
               <FormInput name="email" label="E-mail" type="email" />
-              <FormInput
-                name="login"
-                label="Имя пользователя (логин)"
-                type="text"
-              />
               <FormInput name="fullName" label="Ф.И.О." type="text" />
               <FormInput name="phoneNumber" label="Номер телефона" type="tel" />
-              <FormInput
-                name="additionalPhoneNumber"
-                label="Дополнительный номер телефона"
-                type="tel"
-              />
               <FormInput
                 name="legalForm"
                 label="Организационно-правовая форма"
@@ -78,7 +58,7 @@ export const RegistrationPage: FC = () => {
               >
                 {selectValue[0].map((option) => (
                   <MenuItem key={option.value} value={option.value}>
-                    {option.label}
+                    {option.value}
                   </MenuItem>
                 ))}
               </FormInput>
@@ -91,7 +71,7 @@ export const RegistrationPage: FC = () => {
               >
                 {selectValue[1].map((option) => (
                   <MenuItem key={option.value} value={option.value}>
-                    {option.label}
+                    {option.value}
                   </MenuItem>
                 ))}
               </FormInput>
@@ -115,12 +95,13 @@ export const RegistrationPage: FC = () => {
                 />
               </FormGroup>
             </div>
+            {errorMessage && (
+              <Alert className="w-full py-0" severity="error">
+                {errorMessage}
+              </Alert>
+            )}
             <div className="htmlForm-registration__buttons buttons-registration">
-              <button
-                className="btn btn--peach"
-                type="submit"
-                onSubmit={form.handleSubmit(onSubmit)}
-              >
+              <button className="btn btn--peach" type="submit">
                 Регистрация
               </button>
             </div>

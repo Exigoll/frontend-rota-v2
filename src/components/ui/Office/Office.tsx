@@ -1,5 +1,7 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { DialogContent } from "@mui/material";
+import { Alert, DialogContent } from "@mui/material";
+import { setCookie } from "nookies";
+import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
@@ -9,7 +11,9 @@ import {
 } from "@/components/styledComponents";
 import { FormInput } from "@/components/ui/FormInput";
 
-import { LoginFormSchema } from "@/utils/validations";
+import { UserApi } from "@/utils/api";
+import { LoginDto } from "@/utils/api/types";
+import { FormDataLogin, LoginFormSchema } from "@/utils/validations";
 
 import styles from "./Office.module.scss";
 
@@ -24,11 +28,29 @@ export const Office: React.FC<IOffice> = ({
   visible,
   openAuthDialog,
 }) => {
-  const form = useForm({
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const form = useForm<FormDataLogin>({
     resolver: yupResolver(LoginFormSchema),
     mode: "onBlur",
   });
-  const onSubmit = (data: any) => console.log(data);
+
+  const onSubmit = async (dto: LoginDto) => {
+    try {
+      const data = await UserApi.login(dto);
+      console.log(data);
+      setCookie(null, "token", data.token, {
+        maxAge: 30 * 24 * 60 * 60,
+        path: "/",
+      });
+      setErrorMessage("");
+    } catch (err: any) {
+      console.warn("Register error", err);
+      if (err.response) {
+        setErrorMessage(err.response.data.message);
+      }
+    }
+  };
 
   return (
     <>
@@ -48,16 +70,17 @@ export const Office: React.FC<IOffice> = ({
                 <div className={styles.inputsContainer}>
                   <FormInput name="email" label="E-mail" type="email" />
                   <FormInput name="password" label="Пароль" type="password" />
+                  {errorMessage && (
+                    <Alert className="w-full py-0" severity="error">
+                      {errorMessage}
+                    </Alert>
+                  )}
                 </div>
                 <div className={styles.buttonsContainer}>
                   <button onClick={onClose} className="btn btn--peach">
                     <Link to="./registration">Регистрация</Link>
                   </button>
-                  <button
-                    className="btn btn--blue"
-                    type="submit"
-                    onSubmit={form.handleSubmit(onSubmit)}
-                  >
+                  <button className="btn btn--blue" type="submit">
                     Вход
                   </button>
                 </div>
