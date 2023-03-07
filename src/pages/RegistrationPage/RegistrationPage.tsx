@@ -3,6 +3,8 @@ import { Alert, Checkbox, FormGroup, MenuItem } from "@mui/material";
 import { setCookie } from "nookies";
 import { FC, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
+import { useAppDispatch } from "redux/hooks";
+import { setUserData } from "redux/slices/user";
 
 import { StyledCheckbox } from "@/components/styledComponents";
 import { FormInput } from "@/components/ui/FormInput";
@@ -16,8 +18,8 @@ import { FormDataRegister, RegisterFormSchema } from "@/utils/validations";
 import styles from "./Registration.module.scss";
 
 export const RegistrationPage: FC = () => {
+  const dispatch = useAppDispatch();
   const [errorMessage, setErrorMessage] = useState("");
-
   const form = useForm<FormDataRegister>({
     resolver: yupResolver(RegisterFormSchema),
     mode: "onBlur",
@@ -31,6 +33,7 @@ export const RegistrationPage: FC = () => {
         maxAge: 30 * 24 * 60 * 60,
         path: "/",
       });
+      dispatch(setUserData(data));
       setErrorMessage("");
     } catch (err: any) {
       if (err.response) {
