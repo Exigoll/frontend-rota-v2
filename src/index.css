@@ -80,26 +80,13 @@ select {
   height: 20px !important;
 
   @screen tablet {
-    height: 16px !important;
+    display: none;
   }
+}
+.swiper-pagination-bullet {
+  @apply w-[14px] h-[14px] bg-white;
 
-  @screen mobile {
-    height: 14px !important;
-  }
-
-  &-bullet {
-    @apply w-[14px] h-[14px] bg-white;
-
-    @screen desktop2XL {
-      @apply w-[12px] h-[12px];
-    }
-
-    @screen tablet {
-      @apply w-[10px] h-[10px];
-    }
-
-    @screen mobile {
-      @apply w-[5px] h-[5px] mx-[2px] my-0;
-    }
+  @screen desktop2XL {
+    @apply w-[12px] h-[12px];
   }
 }

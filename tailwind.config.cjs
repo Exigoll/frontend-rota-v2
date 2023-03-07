@@ -89,38 +89,6 @@ module.exports = {
 						lineHeight: "1.75rem",
 					},
 				},
-				".btnOffice": {
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-					columnGap: "10px",
-					width: "100%",
-					height: "100%",
-					borderRadius: "10px",
-					backgroundColor: theme("colors.lightDark"),
-					color: theme("colors.white"),
-					fontSize: "16px",
-					lineHeight: "16px",
-					fontWeight: "700",
-					transition: "transform 0.1s, background-color 0.3s ease-in-out",
-					cursor: "pointer",
-					willChange: "transform",
-
-					"@media (min-width: 769px)": {
-							"&:hover": {
-								backgroundColor: theme("colors.heavyDark"),
-							},
-						},
-
-					"@media (max-width: 768px)": {
-						fontSize: "14px",
-						lineHeight: "14px",
-					},
-
-					"&:active": {
-						transform: "scale(0.99)"
-					},
-				},
 
 				".btn": {
 					display: "flex",
@@ -129,23 +97,23 @@ module.exports = {
 					width: "140px",
 					height: "40px",
 					border: "1px solid transparent",
-					borderRadius: "15px",
+					borderRadius: "10px",
 					backgroundColor: "transparent",
 					fontFamily: theme("fontFamily.title"),
 					color: theme("colors.white"),
-					fontSize: "1rem",
-					lineHeight: "1.5rem",
+					fontSize: "16px",
+					lineHeight: "16px",
 					fontWeight: 700,
 					cursor: "pointer",
 					willChange: "transform",
 					transition: "all 0.3s, transform 0.1s ease-in-out",
 
 					"@media (max-width: 768px)": {
-							width: "126px",
-							height: "36px",
-							fontSize: "0.875rem",
-							lineHeight: "1.25rem",
-						},
+						width: "126px",
+						height: "36px",
+						fontSize: "14px",
+						lineHeight: "14px",
+					},
 
 					"&--transparent": {
 						color: theme("colors.lightDark"),
@@ -174,6 +142,37 @@ module.exports = {
 							},
 						},
 					},
+
+					"&--menu": {
+						width: "100px",
+						justifyContent: "center",
+						columnGap: "10px",
+						borderRadius: "10px",
+						backgroundColor: "transparent",
+						color: theme("colors.white"),
+						fontSize: "16px",
+						lineHeight: "16px",
+						fontWeight: "700",
+						transition: "transform 0.1s, background-color 0.3s ease-in-out",
+						cursor: "pointer",
+						willChange: "transform",
+
+						"@media (min-width: 769px)": {
+							"&:hover": {
+								backgroundColor: theme("colors.heavyDark"),
+							},
+						},
+
+						"@media (max-width: 768px)": {
+							fontSize: "14px",
+							lineHeight: "14px",
+						},
+
+						"@media (max-width: 390px)": {
+							width: "90px",
+						},
+					},
+					
 					"&:active": {
 						transform: "scale(0.96)",
 					}

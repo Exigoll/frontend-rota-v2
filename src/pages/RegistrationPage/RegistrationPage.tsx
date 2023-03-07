@@ -46,9 +46,6 @@ export const RegistrationPage: FC = () => {
         <FormProvider {...form}>
           <form className={styles.form} onSubmit={form.handleSubmit(onSubmit)}>
             <div className={styles.inputsContainer}>
-              <FormInput name="email" label="E-mail" type="email" />
-              <FormInput name="fullName" label="Ф.И.О." type="text" />
-              <FormInput name="phoneNumber" label="Номер телефона" type="tel" />
               <FormInput
                 name="legalForm"
                 label="Организационно-правовая форма"
@@ -75,9 +72,16 @@ export const RegistrationPage: FC = () => {
                   </MenuItem>
                 ))}
               </FormInput>
+              <FormInput
+                name="fullName"
+                label="Ф.И.О. / название организации"
+                type="text"
+              />
+              <FormInput name="email" label="E-mail" type="email" />
+              <FormInput name="phoneNumber" label="Номер телефона" type="tel" />
               <FormInput name="password" label="Пароль" type="password" />
               <FormInput
-                name="password"
+                name="passwordConfirm"
                 label="Повторите пароль"
                 type="password"
               />

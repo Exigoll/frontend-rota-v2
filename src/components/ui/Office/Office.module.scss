@@ -8,7 +8,7 @@
 }
 
 .modal {
-  @apply flex flex-col items-center justify-center gap-y-[35px] w-[520px] h-full px-[10px] py-[50px] bg-white;
+  @apply flex flex-col items-center justify-center gap-y-[35px] w-[480px] h-full px-[10px] py-[50px] bg-white;
 
   @screen tablet {
     @apply gap-y-[25px] w-[420px];
@@ -20,10 +20,10 @@
 }
 
 .modalForm {
-  @apply flex flex-col items-center justify-center gap-y-[30px] max-w-[360px] w-full;
+  @apply flex flex-col items-center justify-center gap-y-[30px] max-w-[320px] w-full;
 
   @screen tablet {
-    @apply gap-y-[25px] max-w-[320px];
+    @apply gap-y-[25px];
   }
 
   @screen mobile2XL {
@@ -82,7 +82,7 @@
 }
 
 .buttonsContainer {
-  @apply flex flex-row items-center justify-evenly w-full;
+  @apply flex flex-row items-center justify-between w-full;
 
   @screen tablet {
     @apply justify-center gap-x-[30px];

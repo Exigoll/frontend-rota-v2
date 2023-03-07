@@ -1,14 +1,14 @@
 import { yupResolver } from "@hookform/resolvers/yup";
+import { AccountCircle } from "@mui/icons-material";
 import { Alert, DialogContent } from "@mui/material";
 import { setCookie } from "nookies";
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import { useAppDispatch } from "redux/hooks";
+import { setUserData } from "redux/slices/user";
 
-import {
-  StyledButtonOffice,
-  StyledPopupOffice,
-} from "@/components/styledComponents";
+import { StyledPopupOffice } from "@/components/styledComponents";
 import { FormInput } from "@/components/ui/FormInput";
 
 import { UserApi } from "@/utils/api";
@@ -28,6 +28,8 @@ export const Office: React.FC<IOffice> = ({
   visible,
   openAuthDialog,
 }) => {
+  const dispatch = useAppDispatch();
+
   const [errorMessage, setErrorMessage] = useState("");
 
   const form = useForm<FormDataLogin>({
@@ -44,6 +46,7 @@ export const Office: React.FC<IOffice> = ({
         path: "/",
       });
       setErrorMessage("");
+      dispatch(setUserData(data));
     } catch (err: any) {
       console.warn("Register error", err);
       if (err.response) {
@@ -55,7 +58,10 @@ export const Office: React.FC<IOffice> = ({
   return (
     <>
       <div className={styles.officeWrapper}>
-        <StyledButtonOffice onClick={openAuthDialog}>Войти</StyledButtonOffice>
+        <button className="btn btn--menu" onClick={openAuthDialog}>
+          <AccountCircle />
+          Войти
+        </button>
       </div>
       <StyledPopupOffice open={visible} onClose={onClose}>
         <DialogContent sx={{ padding: 0 }}>
@@ -77,11 +83,11 @@ export const Office: React.FC<IOffice> = ({
                   )}
                 </div>
                 <div className={styles.buttonsContainer}>
-                  <button onClick={onClose} className="btn btn--peach">
+                  <button onClick={onClose} className="btn btn--blue">
                     <Link to="./registration">Регистрация</Link>
                   </button>
-                  <button className="btn btn--blue" type="submit">
-                    Вход
+                  <button className="btn btn--peach" type="submit">
+                    Войти
                   </button>
                 </div>
               </form>

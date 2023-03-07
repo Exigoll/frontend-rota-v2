@@ -4,13 +4,14 @@ import {
   Dialog,
   Drawer,
   FormControlLabel,
+  Menu,
   Select,
   TextField,
   styled,
 } from "@mui/material";
 
 export const StyledInput = styled(TextField)({
-  width: "360px",
+  width: "320px",
   borderRadius: "10px",
   "& .MuiFormLabel-root": {
     "@media (max-width: 490px)": {
@@ -21,10 +22,6 @@ export const StyledInput = styled(TextField)({
     "@media (max-width: 490px)": {
       fontSize: "14px",
     },
-  },
-
-  "@media (max-width: 768px)": {
-    width: "320px",
   },
 
   "@media (max-width: 490px)": {
@@ -54,41 +51,6 @@ export const StyledSelect = styled(Select)({
     "@media (max-width: 490px)": {
       fontSize: "14px",
     },
-  },
-});
-
-export const StyledButtonOffice = styled(Button)({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  columnGap: "10px",
-  width: "90px",
-  height: "40px",
-  padding: "0",
-  borderRadius: "10px",
-  backgroundColor: "#2e3536",
-  color: "#fff",
-  fontSize: "16px",
-  lineHeight: "16px",
-  fontWeight: "700",
-  textTransform: "capitalize",
-  transition: "transform 0.1s, background-color 0.3s ease-in-out",
-  cursor: "pointer",
-  willChange: "transform",
-
-  "@media (min-width: 769px)": {
-    "&:hover": {
-      backgroundColor: "#1b1f20",
-    },
-  },
-
-  "@media (max-width: 768px)": {
-    fontSize: "14px",
-    lineHeight: "14px",
-  },
-
-  "&:active": {
-    transform: "scale(0.99)",
   },
 });
 
@@ -180,5 +142,45 @@ export const StyledMenuOpen = styled(MenuOpen)({
   "@media (max-width: 490px)": {
     width: "40px",
     height: "40px",
+  },
+});
+
+export const StyledMenu = styled(Menu)({
+  "& .MuiPaper-root": {
+    borderRadius: "10px",
+    backgroundColor: "#2E3536",
+    color: "white",
+  },
+
+  "& .MuiMenu-list": {
+    display: "flex",
+    flexDirection: "column",
+    rowGap: "5px",
+    width: "300px",
+    backgroundColor: "#2E3536",
+    borderRadius: "10px",
+  },
+
+  "& .MuiMenuItem-root": {
+    columnGap: "10px",
+    minHeight: "20px",
+    paddingLeft: "15px",
+    paddingTop: "0",
+    paddingBottom: "0",
+    paddingRight: "15px",
+    fontSize: "16px",
+    lineHeight: "20px",
+
+    "@media (max-width: 490px)": {
+      minHeight: "18px",
+      fontSize: "14px",
+      lineHeight: "18px",
+    },
+
+    ":hover": {
+      backgroundColor: "white",
+      color: "#2E3536",
+      fill: "#2E3536",
+    },
   },
 });
