@@ -67,20 +67,18 @@ module.exports = {
 					marginBottom: "30px",
 					fontFamily: theme("fontFamily.title"),
 					color: theme("colors.lightDark"),
-					fontSize: "2.25rem",
-					lineHeight: "2.5rem",
+					fontSize: "1.875rem",
+					lineHeight: "2.25rem",
 					fontWeight: 700,
 
 					"@media (max-width: 1024px)": {
 						marginBottom: "25px",
-						fontSize: "1.875rem",
-						lineHeight: "2.25rem",
+						fontSize: "1.5rem",
+						lineHeight: "2rem",
 					},
 
 					"@media (max-width: 768px)": {
 						marginBottom: "20px",
-						fontSize: "1.5rem",
-						lineHeight: "2rem",
 					},
 
 					"@media (max-width: 490px)": {

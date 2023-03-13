@@ -75,6 +75,10 @@ select {
   }
 }
 
+.page {
+  @apply max-w-[1240px] w-full my-0 mx-auto;
+}
+
 .swiper-pagination {
   bottom: 2% !important;
   height: 20px !important;

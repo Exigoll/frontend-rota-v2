@@ -40,7 +40,6 @@ export const Office: React.FC<IOffice> = ({
   const onSubmit = async (dto: LoginDto) => {
     try {
       const data = await UserApi.login(dto);
-      console.log(data);
       setCookie(null, "token", data.token, {
         maxAge: 30 * 24 * 60 * 60,
         path: "/",

@@ -1,4 +1,4 @@
-import { AboutPage } from "@/pages/AboutPage/AboutPage";
+import { AboutPage } from "@/pages/AboutPage";
 import { ContactsPage } from "@/pages/ContactsPage";
 import { DeliveryPage } from "@/pages/DeliveryPage";
 import { DocumentFlowPage } from "@/pages/DocumentFlowPage";

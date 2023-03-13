@@ -1,8 +1,8 @@
-import React from "react";
+import { FC } from "react";
 
 import styles from "./DeliveryPage.module.scss";
 
-export const DeliveryPage: React.FC = () => {
+export const DeliveryPage: FC = () => {
   return (
     <div>
       <h1>DeliveryPage</h1>

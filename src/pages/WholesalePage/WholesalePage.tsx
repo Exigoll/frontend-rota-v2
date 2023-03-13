@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-export const WholesalePage: React.FC = () => {
+export const WholesalePage: FC = () => {
   return (
     <div>
       <h1>WholesalePage</h1>

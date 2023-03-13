@@ -1,6 +1,6 @@
-import React from "react";
+import { FC } from "react";
 
-export const ContactsPage: React.FC = () => {
+export const ContactsPage: FC = () => {
   return (
     <div>
       <h1>Contacts</h1>

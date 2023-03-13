@@ -1,0 +1,15 @@
+.textContent {
+  @apply flex flex-col gap-y-[20px] indent-[50px] text-lg text-justify font-text font-normal;
+
+  @screen desktop {
+    @apply gap-y-[15px] indent-[40px];
+  }
+
+  @screen tablet {
+    @apply gap-y-[10px] indent-[30px] text-base;
+  }
+
+  @screen mobile2XL {
+    @apply indent-[20px] text-sm;
+  }
+}

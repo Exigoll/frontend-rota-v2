@@ -28,7 +28,6 @@ export const RegistrationPage: FC = () => {
   const onSubmit = async (dto: CreateUserDto) => {
     try {
       const data = await UserApi.register(dto);
-      console.log(data);
       setCookie(null, "token", data.token, {
         maxAge: 30 * 24 * 60 * 60,
         path: "/",
