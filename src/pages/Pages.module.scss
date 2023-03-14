@@ -13,3 +13,125 @@
     @apply indent-[20px] text-sm;
   }
 }
+
+// Provider
+.listWrapper {
+  @apply flex flex-col gap-y-[50px] font-text;
+
+  @screen desktop {
+    @apply gap-y-[40px];
+  }
+
+  @screen mobile2XL {
+    @apply gap-y-[30px];
+  }
+}
+
+.list {
+  @apply flex flex-col gap-y-[20px];
+
+  @screen desktop {
+    @apply gap-y-[15px];
+  }
+
+  @screen tablet {
+    @apply gap-y-[12px];
+  }
+
+  @screen mobile2XL {
+    @apply gap-y-[10px];
+  }
+}
+
+.listTitle {
+  @apply font-title font-bold text-2xl;
+
+  @screen desktop {
+    @apply text-xl;
+  }
+
+  @screen tablet {
+    @apply text-lg;
+  }
+
+  @screen mobile2XL {
+    @apply text-base;
+  }
+}
+
+.sublist {
+  @apply flex flex-col gap-y-[20px];
+
+  @screen desktop {
+    @apply gap-y-[15px];
+  }
+
+  @screen tablet {
+    @apply gap-y-[12px];
+  }
+
+  @screen mobile2XL {
+    @apply gap-y-[10px];
+  }
+}
+
+.sublistItem {
+  @apply flex items-center gap-x-[15px];
+
+  @screen desktop {
+    @apply gap-x-[15px];
+  }
+
+  @screen tablet {
+    @apply gap-x-[12px];
+  }
+
+  @screen mobile2XL {
+    @apply gap-x-[10px];
+  }
+
+  span {
+    @apply flex items-center justify-center w-full max-w-[30px] h-[30px] text-xl rounded-[5px] text-white bg-lightDark;
+
+    @screen desktop {
+      @apply max-w-[28px] h-[28px] text-lg;
+    }
+
+    @screen tablet {
+      @apply max-w-[26px] h-[26px] text-base;
+    }
+
+    @screen mobile2XL {
+      @apply max-w-[24px] h-[24px] text-sm;
+    }
+  }
+
+  p {
+    @apply font-normal;
+  }
+}
+
+.sublistItem,
+.listText {
+  @apply text-xl;
+
+  @screen desktop {
+    @apply text-lg;
+  }
+
+  @screen desktop {
+    @apply text-base;
+  }
+
+  @screen desktop {
+    @apply text-sm;
+  }
+
+  a {
+    @apply text-peach;
+  }
+}
+
+.listText {
+  @apply font-bold;
+}
