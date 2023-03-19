@@ -1,8 +1,8 @@
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-import { ResponseUser } from "@/utils/api/types";
+import { RootState } from "@/redux/store";
 
-import { RootState } from "./../store";
+import { ResponseUser } from "@/utils/api/types";
 
 export interface UserState {
   data: ResponseUser | null;

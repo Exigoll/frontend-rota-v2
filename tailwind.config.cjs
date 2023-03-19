@@ -4,9 +4,7 @@ const plugin = require("tailwindcss/plugin");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-		"./*.html",
 		"./src/**/*.{js,ts,jsx,tsx}",
-		'./node_modules/@mui/*/*.{js,ts,jsx,tsx}',
 	],
 	theme: {
 		screens: {
