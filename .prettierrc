@@ -3,6 +3,7 @@
     "<THIRD_PARTY_MODULES>",
     "^@/components/(.*)$",
     "^@/pages/(.*)$",
+    "^@/common/(.*)$",
     "^@/redux/(.*)$",
     "^@/providers/(.*)$",
     "^@/services/(.*)$",

@@ -1,4 +1,5 @@
 import { AboutPage } from "@/pages/AboutPage";
+import { AuthRootComponent } from "@/pages/Auth/AuthRootComponent";
 import { ContactsPage } from "@/pages/ContactsPage";
 import { DeliveryPage } from "@/pages/DeliveryPage";
 import { DocumentFlowPage } from "@/pages/DocumentFlowPage";
@@ -14,7 +15,8 @@ export const routes = [
   { path: "provider", element: <ProviderPage /> },
   { path: "wholesale", element: <WholesalePage /> },
   { path: "contacts", element: <ContactsPage /> },
-  { path: "registration", element: <RegistrationPage /> },
+  { path: "login", element: <AuthRootComponent /> },
+  { path: "register", element: <AuthRootComponent /> },
   { path: "delivery", element: <DeliveryPage /> },
   { path: "warrantyReturn", element: <WarrantyReturnPage /> },
   { path: "documentFlow", element: <DocumentFlowPage /> },

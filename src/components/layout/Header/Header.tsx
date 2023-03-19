@@ -24,7 +24,7 @@ export const Header: FC = () => {
   return (
     <header className={styles.header}>
       <Navbar />
-      <Search />
+      {userData ? <Search /> : ""}
       {userData ? (
         <UserMenu />
       ) : (
