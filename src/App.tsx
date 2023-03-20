@@ -3,10 +3,11 @@ import { Route, Routes } from "react-router-dom";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 
+import { HomePage } from "@/pages/HomePage";
+
 import { routes } from "@/store/route";
 
-import { HomePage } from "./pages/HomePage";
-import { PrivateRoute } from "./utils/router";
+import { PrivateRoute } from "@/utils/router";
 
 function App() {
   return (
