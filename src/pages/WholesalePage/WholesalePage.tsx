@@ -14,7 +14,7 @@ export const WholesalePage: FC = () => {
             <p className={styles.text}>
               Заказать и приобрести автомобильные запчасти и расходные материалы
               в нашем магазине – проще простого! Необходимо&nbsp;
-              <Link to="/registration">зарегистрироваться</Link>
+              <Link to="/register">зарегистрироваться</Link>
               &nbsp;на нашем сайте, после чего загрузить необходимые документы в
               личном кабинете, либо направить на электронную почту&nbsp;
               <a href="mailto:info@rotazap.ru">info@rotazap.ru</a>

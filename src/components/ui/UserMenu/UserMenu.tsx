@@ -1,14 +1,39 @@
 import { AccountCircle } from "@mui/icons-material";
+import {
+  AccountBalanceWallet,
+  Article,
+  AssignmentReturn,
+  ContactPage,
+  DownloadForOffline,
+  ExitToApp,
+  House,
+  Settings,
+  ShoppingCart,
+  SwitchAccount,
+  ViewQuilt,
+} from "@mui/icons-material";
 import { MenuItem } from "@mui/material";
-import { useState } from "react";
+import { FC, useState } from "react";
 
 import { StyledMenu } from "@/components/styledComponents";
 
-import { menuItems } from "@/store/menuItems";
-
 import styles from "./UserMenu.module.scss";
 
-export const UserMenu: React.FC = () => {
+const menuItems = [
+  { title: "Личный кабинет", icon: <House /> },
+  { title: "Баланс", icon: <AccountBalanceWallet /> },
+  { title: "Корзина", icon: <ShoppingCart /> },
+  { title: "Заказы", icon: <ViewQuilt /> },
+  { title: "Загрузка заказа из файла", icon: <DownloadForOffline /> },
+  { title: "Возвраты", icon: <AssignmentReturn /> },
+  { title: "Документы", icon: <Article /> },
+  { title: "Уставные документы", icon: <ContactPage /> },
+  { title: "Профиль", icon: <SwitchAccount /> },
+  { title: "Настройки", icon: <Settings /> },
+  { title: "Выход", icon: <ExitToApp /> },
+];
+
+export const UserMenu: FC = (): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {

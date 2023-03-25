@@ -9,8 +9,6 @@ import { setUserData } from "redux/slices/user";
 import { StyledCheckbox } from "@/components/styledComponents";
 import { FormInput } from "@/components/ui/FormInput";
 
-import { selectValue } from "@/store/selectValue";
-
 import { UserApi } from "@/utils/api";
 import { CreateUserDto } from "@/utils/api/types";
 import { FormDataRegister, RegisterFormSchema } from "@/utils/validations";
@@ -55,11 +53,8 @@ export const RegistrationPage: FC = () => {
                 defaultValue=""
                 select
               >
-                {selectValue[0].map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.value}
-                  </MenuItem>
-                ))}
+                <MenuItem value="ООО">ООО</MenuItem>
+                <MenuItem value="ООО">ИП</MenuItem>
               </FormInput>
               <FormInput
                 name="kindOfActivity"
@@ -68,11 +63,10 @@ export const RegistrationPage: FC = () => {
                 defaultValue=""
                 select
               >
-                {selectValue[1].map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.value}
-                  </MenuItem>
-                ))}
+                <MenuItem value="Интернет-магазин">Интернет-магазин</MenuItem>
+                <MenuItem value="СТО">СТО</MenuItem>
+                <MenuItem value="Розничный магазин">Розничный магазин</MenuItem>
+                <MenuItem value="Прочее">Прочее</MenuItem>
               </FormInput>
               <FormInput
                 name="fullName"

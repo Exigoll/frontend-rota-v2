@@ -1,4 +1,11 @@
-export const sliderItems = [
+import { FC } from "react";
+import { Autoplay, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
+
+import styles from "./Info.module.scss";
+
+const sliderItems = [
   {
     id: 0,
     title:
@@ -41,3 +48,37 @@ export const sliderItems = [
       "https://res.cloudinary.com/djqpiccvn/image/upload/v1677133656/rota-slider-img/slider-4_pp2mzk.jpg",
   },
 ];
+
+export const InfoSlider: FC = (): JSX.Element => {
+  return (
+    <section className="container section">
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        className={styles.slider}
+        spaceBetween={30}
+        loop={true}
+        allowTouchMove={true}
+        //speed={3000}
+        slidesPerView={1}
+        /* autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }} */
+        pagination={{
+          clickable: true,
+          dynamicBullets: true,
+        }}
+      >
+        {sliderItems.map((item) => (
+          <SwiperSlide key={item.id} className={styles.slide}>
+            <div className={styles.image}>
+              <img src={item.pathImg} alt="Image" />
+            </div>
+            <p className={styles.text}>{item.title}</p>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
+  );
+};

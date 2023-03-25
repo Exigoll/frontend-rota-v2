@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.10.5",
     "@hookform/resolvers": "^2.9.11",
     "@mui/icons-material": "^5.11.9",
+    "@mui/lab": "^5.0.0-alpha.124",
     "@mui/material": "^5.11.9",
     "@reduxjs/toolkit": "^1.9.3",
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",

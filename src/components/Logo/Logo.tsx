@@ -1,4 +1,4 @@
-export const IconLogo = (props: React.ComponentPropsWithRef<"svg">) => {
+export const Logo = (props: React.ComponentPropsWithRef<"svg">) => {
   return (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 349 56">
       <g>

@@ -1,135 +1,141 @@
-import { Button, TextField, Typography } from "@mui/material";
+import { Checkbox, FormGroup, MenuItem, Typography } from "@mui/material";
 import React from "react";
 
-import { IPropsRegister } from "@/common/types";
+import AppLoadingButton from "@/components/LoadingButton";
+import { StyledCheckbox, StyledInput } from "@/components/styledComponents";
 
-export const Register: React.FC<IPropsRegister> = ({
-  setEmail,
-  setPassword,
-  setRepeatPassword,
-  setFullName,
-  setPhoneNumber,
-  setAddress,
-  setLegalForm,
-  setKindOfActivity,
-  navigate,
-}: IPropsRegister): JSX.Element => {
+import { IPropsRegister } from "@/common/types/auth";
+
+import styles from "../AuthRoot.module.scss";
+
+export const Register: React.FC<IPropsRegister> = (
+  props: IPropsRegister
+): JSX.Element => {
+  const { navigate, register, errors, loading } = props;
+
   return (
     <>
-      <Typography
-        sx={{
-          fontFamily: "Poppins",
-          textAlign: "center",
-        }}
-        variant="h3"
-      >
-        Регистрация
-      </Typography>
-      <Typography
-        sx={{
-          fontFamily: "Poppins",
-          textAlign: "center",
-          marginBottom: 3,
-        }}
-        variant="body1"
-      >
-        Введите данные для регистрации
-      </Typography>
-      <TextField
-        margin="normal"
-        fullWidth={true}
-        type="text"
-        label="Имя"
-        placeholder="Введите Ваше имя"
-        variant="outlined"
-        onChange={(e) => setFullName(e.target.value)}
-      />
-      <TextField
-        margin="normal"
-        fullWidth={true}
-        type="text"
-        label="Номер телефона"
-        placeholder="Введите номер телефона"
-        variant="outlined"
-        onChange={(e) => setPhoneNumber(e.target.value)}
-      />
-      <TextField
-        margin="normal"
-        fullWidth={true}
-        type="text"
-        label="Адрес"
-        placeholder="Введите адрес доставки"
-        variant="outlined"
-        onChange={(e) => setAddress(e.target.value)}
-      />
-      <TextField
-        margin="normal"
-        fullWidth={true}
-        type="text"
-        label="Организационно-правовая форма"
-        placeholder=""
-        variant="outlined"
-        onChange={(e) => setLegalForm(e.target.value)}
-      />
-      <TextField
-        margin="normal"
-        fullWidth={true}
-        type="text"
-        label="Вид деятельности"
-        placeholder=""
-        variant="outlined"
-        onChange={(e) => setKindOfActivity(e.target.value)}
-      />
-      <TextField
-        margin="normal"
-        fullWidth={true}
-        type="email"
-        label="E-mail"
-        placeholder="Введите E-mail"
-        variant="outlined"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <TextField
-        margin="normal"
-        fullWidth={true}
-        type="password"
-        label="Пароль"
-        placeholder="Введите пароль"
-        variant="outlined"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <TextField
-        margin="normal"
-        fullWidth={true}
-        type="password"
-        label="Пароль"
-        placeholder="Повторите пароль"
-        variant="outlined"
-        onChange={(e) => setRepeatPassword(e.target.value)}
-      />
-      <Button
-        sx={{
-          fontFamily: "Poppins",
-          marginTop: 2,
-          marginBottom: 2,
-          width: "60%",
-        }}
-        variant="contained"
-        type="submit"
-      >
-        Регистрация
-      </Button>
-      <Typography
-        variant="body1"
-        sx={{
-          fontFamily: "Poppins",
-        }}
-      >
-        У Вас уже есть аккаунт?
-        <span className="incitingText" onClick={() => navigate("/login")}>
-          Авторизация
-        </span>
-      </Typography>
+      <div className={styles.registerWrapper}>
+        <h2 className="titleSection">Регистрация</h2>
+        <div className={styles.inputsContainer}>
+          <StyledInput
+            type="email"
+            label="E-mail"
+            placeholder="Введите E-mail"
+            variant="outlined"
+            error={!!errors.email}
+            helperText={errors.email ? `${errors.email.message}` : ""}
+            {...register("email")}
+          />
+          <StyledInput
+            type="password"
+            label="Пароль"
+            placeholder="Введите пароль"
+            variant="outlined"
+            error={!!errors.password}
+            helperText={errors.password ? `${errors.password.message}` : ""}
+            {...register("password")}
+          />
+          <StyledInput
+            type="password"
+            label="Пароль"
+            placeholder="Повторите пароль"
+            variant="outlined"
+            error={!!errors.confirmPassword}
+            helperText={
+              errors.confirmPassword ? `${errors.confirmPassword.message}` : ""
+            }
+            {...register("confirmPassword")}
+          />
+          <StyledInput
+            type="text"
+            label="Ф.И.О. / название организации"
+            placeholder="Введите Ф.И.О. / название организации"
+            variant="outlined"
+            error={!!errors.fullName}
+            helperText={errors.fullName ? `${errors.fullName.message}` : ""}
+            {...register("fullName")}
+          />
+          <StyledInput
+            type="text"
+            label="Адрес доставки"
+            placeholder="Введите адрес доставки"
+            variant="outlined"
+            error={!!errors.address}
+            helperText={errors.address ? `${errors.address.message}` : ""}
+            {...register("address")}
+          />
+          <StyledInput
+            type="text"
+            label="Номер телефона"
+            placeholder="Введите номер телефона"
+            variant="outlined"
+            error={!!errors.phoneNumber}
+            helperText={
+              errors.phoneNumber ? `${errors.phoneNumber.message}` : ""
+            }
+            {...register("phoneNumber")}
+          />
+          <StyledInput
+            type="text"
+            label="Организационно-правовая форма"
+            placeholder="Выберите организационно-правовую форму"
+            variant="outlined"
+            select
+            defaultValue=""
+            error={!!errors.legalForm}
+            helperText={errors.legalForm ? `${errors.legalForm.message}` : ""}
+            {...register("legalForm")}
+          >
+            <MenuItem value="ООО">ООО</MenuItem>
+            <MenuItem value="ИП">ИП</MenuItem>
+          </StyledInput>
+          <StyledInput
+            type="text"
+            label="Вид деятельности"
+            placeholder="Выберите вид деятельности"
+            variant="outlined"
+            select
+            defaultValue=""
+            error={!!errors.kindOfActivity}
+            helperText={
+              errors.kindOfActivity ? `${errors.kindOfActivity.message}` : ""
+            }
+            {...register("kindOfActivity")}
+          >
+            <MenuItem value="Интернет-магазин">Интернет-магазин</MenuItem>
+            <MenuItem value="СТО">СТО</MenuItem>
+            <MenuItem value="Розничный магазин">Розничный магазин</MenuItem>
+            <MenuItem value="ИДругоеП">Другое</MenuItem>
+          </StyledInput>
+        </div>
+        <div className={styles.checkboxContainer}>
+          <FormGroup>
+            <StyledCheckbox
+              control={<Checkbox required />}
+              label="Согласие на обработку персональных данных"
+            />
+            <StyledCheckbox
+              control={<Checkbox required />}
+              label="Подтверждение регистрации"
+            />
+          </FormGroup>
+        </div>
+        <div className={styles.buttonsContainer}>
+          <AppLoadingButton variant="contained" type="submit" loading={loading}>
+            Регистрация
+          </AppLoadingButton>
+          <Typography variant="body1">
+            У Вас уже есть аккаунт?
+            <span
+              className={styles.incitingText}
+              onClick={() => navigate("/login")}
+            >
+              Авторизация
+            </span>
+          </Typography>
+        </div>
+      </div>
     </>
   );
 };
