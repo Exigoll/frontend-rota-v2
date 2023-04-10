@@ -9,12 +9,8 @@ export const LoginSchema = yup.object().shape({
     .required(AppErrors.RequiredField),
   password: yup
     .string()
-    .min(5, AppErrors.MinLength)
-    .required(AppErrors.RequiredField)
-    .matches(
-      /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!@#$%&?]{6,20}$/,
-      AppErrors.InvalidPassword
-    ),
+    .min(6, AppErrors.MinLength)
+    .required(AppErrors.RequiredField),
 });
 
 export const RegisterSchema = yup
@@ -22,12 +18,8 @@ export const RegisterSchema = yup
   .shape({
     confirmPassword: yup
       .string()
-      .min(8, AppErrors.MinLength)
-      .required(AppErrors.RequiredField)
-      .matches(
-        /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[a-zA-Z!#$%&? "])[a-zA-Z0-9!@#$%&?]{6,20}$/,
-        AppErrors.InvalidPassword
-      ),
+      .min(6, AppErrors.MinLength)
+      .required(AppErrors.RequiredField),
     fullName: yup
       .string()
       .min(6, AppErrors.MinLength)

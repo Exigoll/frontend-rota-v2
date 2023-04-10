@@ -1,6 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Alert, Checkbox, FormGroup, MenuItem } from "@mui/material";
-import { setCookie } from "nookies";
 import { FC, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useAppDispatch } from "redux/hooks";
