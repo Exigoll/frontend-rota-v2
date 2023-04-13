@@ -1,0 +1,111 @@
+/* Auth */
+.root {
+  @apply flex justify-center items-center h-[100vh] w-[100vw] p-[20px];
+}
+
+.formAuth {
+  @apply flex-1;
+}
+
+.wrapper {
+  @apply flex flex-col items-center justify-center max-w-[640px] m-auto p-[40px] rounded-[20px];
+  //box-shadow: -3px -2px 20px 1px #202020;
+}
+
+.incitingText {
+  @apply ml-[10px] cursor-pointer text-[#1900d5];
+}
+
+/* Register */
+
+.registerWrapper {
+  @apply flex flex-col items-center justify-center gap-y-[35px] py-[50px] max-w-[520px] w-full h-full mx-auto rounded-[20px] bg-white boxShadow;
+
+  @screen tablet {
+    @apply gap-y-[30px] max-w-[420px] py-[40px] rounded-[15px];
+  }
+
+  @screen mobile2XL {
+    @apply gap-y-[25px] py-[30px] rounded-[10px];
+    box-shadow: none;
+  }
+}
+
+.form {
+  @apply flex flex-col items-center justify-center gap-y-[30px] max-w-[380px] w-full h-full px-[10px];
+
+  @screen tablet {
+    @apply gap-y-[25px] max-w-[340px];
+  }
+
+  @screen mobile2XL {
+    @apply gap-y-[20px] max-w-[300px];
+  }
+}
+
+.inputsContainer {
+  @apply flex flex-col items-center justify-center gap-y-[20px] w-full;
+
+  @screen mobile2XL {
+    @apply gap-y-[15px];
+  }
+}
+
+.input {
+  @apply flex flex-col items-start justify-center gap-y-[3px] w-full;
+
+  label {
+    @apply text-base;
+
+    span {
+      @apply text-red-500;
+    }
+  }
+
+  select {
+    @apply cursor-pointer;
+  }
+
+  input,
+  select {
+    @apply h-[40px] w-full rounded-[10px] px-[20px] border-[3px] border-solid border-transparent bg-white text-base transitionAll focus:border-darkBlue focus:boxShadow;
+
+    @screen tabletMin {
+      @apply hover:border-darkBlue hover:boxShadow;
+    }
+
+    @screen tablet {
+      @apply h-[35px] px-[15px] text-sm;
+    }
+
+    @screen mobile2XL {
+      @apply h-[30px] px-[7.5px];
+    }
+
+    &::placeholder {
+      @apply text-base text-placeholder;
+
+      @screen tablet {
+        @apply text-sm;
+      }
+    }
+  }
+}
+
+.checkboxContainer {
+  @apply flex flex-col items-start gap-y-[10px] w-full;
+}
+
+.checkbox {
+  @apply flex flex-row-reverse gap-x-[10px];
+
+  label {
+    @apply text-sm font-normal cursor-pointer;
+
+    @screen tablet {
+      @apply text-xs;
+    }
+  }
+}
+
+/* Login */
