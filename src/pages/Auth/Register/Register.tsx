@@ -1,8 +1,14 @@
-import { Checkbox, FormGroup, MenuItem, Typography } from "@mui/material";
+import {
+  Checkbox,
+  FormGroup,
+  MenuItem,
+  TextField,
+  Typography,
+} from "@mui/material";
 import React from "react";
 
-import AppLoadingButton from "@/components/LoadingButton";
-import { StyledCheckbox, StyledInput } from "@/components/styledComponents";
+import StyledLoadingButton from "@/components/LoadingButton";
+import { StyledCheckbox } from "@/components/styledComponents";
 
 import { IPropsRegister } from "@/common/types/auth";
 
@@ -15,10 +21,10 @@ export const Register: React.FC<IPropsRegister> = (
 
   return (
     <>
-      <div className={styles.registerWrapper}>
-        <h2 className="titleSection">Регистрация</h2>
-        <div className={styles.inputsContainer}>
-          <StyledInput
+      <div className={styles.formWrapper}>
+        <h2 className="titlePage m-0">Регистрация</h2>
+        <div className={styles.inputWrapper}>
+          <TextField
             type="email"
             label="E-mail"
             placeholder="Введите E-mail"
@@ -27,7 +33,7 @@ export const Register: React.FC<IPropsRegister> = (
             helperText={errors.email ? `${errors.email.message}` : ""}
             {...register("email")}
           />
-          <StyledInput
+          <TextField
             type="password"
             label="Пароль"
             placeholder="Введите пароль"
@@ -36,7 +42,7 @@ export const Register: React.FC<IPropsRegister> = (
             helperText={errors.password ? `${errors.password.message}` : ""}
             {...register("password")}
           />
-          <StyledInput
+          <TextField
             type="password"
             label="Пароль"
             placeholder="Повторите пароль"
@@ -47,16 +53,16 @@ export const Register: React.FC<IPropsRegister> = (
             }
             {...register("confirmPassword")}
           />
-          <StyledInput
+          <TextField
             type="text"
-            label="Ф.И.О. / название организации"
-            placeholder="Введите Ф.И.О. / название организации"
+            label="Ф.И.О."
+            placeholder="Введите Ф.И.О."
             variant="outlined"
             error={!!errors.fullName}
             helperText={errors.fullName ? `${errors.fullName.message}` : ""}
             {...register("fullName")}
           />
-          <StyledInput
+          <TextField
             type="text"
             label="Адрес доставки"
             placeholder="Введите адрес доставки"
@@ -65,7 +71,7 @@ export const Register: React.FC<IPropsRegister> = (
             helperText={errors.address ? `${errors.address.message}` : ""}
             {...register("address")}
           />
-          <StyledInput
+          <TextField
             type="text"
             label="Номер телефона"
             placeholder="Введите номер телефона"
@@ -76,7 +82,7 @@ export const Register: React.FC<IPropsRegister> = (
             }
             {...register("phoneNumber")}
           />
-          <StyledInput
+          <TextField
             type="text"
             label="Организационно-правовая форма"
             placeholder="Выберите организационно-правовую форму"
@@ -89,8 +95,8 @@ export const Register: React.FC<IPropsRegister> = (
           >
             <MenuItem value="ООО">ООО</MenuItem>
             <MenuItem value="ИП">ИП</MenuItem>
-          </StyledInput>
-          <StyledInput
+          </TextField>
+          <TextField
             type="text"
             label="Вид деятельности"
             placeholder="Выберите вид деятельности"
@@ -107,7 +113,7 @@ export const Register: React.FC<IPropsRegister> = (
             <MenuItem value="СТО">СТО</MenuItem>
             <MenuItem value="Розничный магазин">Розничный магазин</MenuItem>
             <MenuItem value="ИДругоеП">Другое</MenuItem>
-          </StyledInput>
+          </TextField>
         </div>
         <div className={styles.checkboxContainer}>
           <FormGroup>
@@ -121,19 +127,16 @@ export const Register: React.FC<IPropsRegister> = (
             />
           </FormGroup>
         </div>
-        <div className={styles.buttonsContainer}>
-          <AppLoadingButton variant="contained" type="submit" loading={loading}>
-            Регистрация
-          </AppLoadingButton>
-          <Typography variant="body1">
-            У Вас уже есть аккаунт?
-            <span
-              className={styles.incitingText}
-              onClick={() => navigate("/login")}
-            >
-              Авторизация
-            </span>
-          </Typography>
+        <StyledLoadingButton
+          variant="contained"
+          type="submit"
+          loading={loading}
+        >
+          Регистрация
+        </StyledLoadingButton>
+        <div className={styles.authLocation}>
+          <p> У Вас уже есть аккаунт?</p>
+          <span onClick={() => navigate("/login")}>Регистрация</span>
         </div>
       </div>
     </>

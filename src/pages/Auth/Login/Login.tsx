@@ -1,7 +1,7 @@
 import { TextField, Typography } from "@mui/material";
 import React from "react";
 
-import AppLoadingButton from "@/components/LoadingButton";
+import StyledLoadingButton from "@/components/LoadingButton";
 
 import { IPropsLogin } from "@/common/types/auth";
 
@@ -14,46 +14,40 @@ export const Login: React.FC<IPropsLogin> = (
 
   return (
     <>
-      <Typography variant="h3" textAlign="center" fontSize="32px">
-        Авторизация
-      </Typography>
-      <Typography variant="body1" textAlign="center" marginBottom="3px">
-        Введите логин и пароль
-      </Typography>
-      <TextField
-        margin="normal"
-        fullWidth={true}
-        type="email"
-        label="E-mail"
-        placeholder="Введите E-mail"
-        variant="outlined"
-        error={!!errors.email}
-        helperText={errors.email ? `${errors.email.message}` : ""}
-        {...register("email")}
-      />
-      <TextField
-        margin="normal"
-        fullWidth={true}
-        type="password"
-        label="Пароль"
-        placeholder="Введите пароль"
-        variant="outlined"
-        error={!!errors.password}
-        helperText={errors.password ? `${errors.password.message}` : ""}
-        {...register("password")}
-      />
-      <AppLoadingButton type="submit" variant="contained" loading={loading}>
-        Войти
-      </AppLoadingButton>
-      <Typography variant="body1">
-        У Вас нет аккаунта?
-        <span
-          className={styles.incitingText}
-          onClick={() => navigate("/register")}
+      <div className={styles.formWrapper}>
+        <h3 className={`titlePage m-0`}>Авторизация</h3>
+        <div className={styles.inputWrapper}>
+          <TextField
+            type="email"
+            label="E-mail"
+            placeholder="Введите E-mail"
+            variant="outlined"
+            error={!!errors.email}
+            helperText={errors.email ? `${errors.email.message}` : ""}
+            {...register("email")}
+          />
+          <TextField
+            type="password"
+            label="Пароль"
+            placeholder="Введите пароль"
+            variant="outlined"
+            error={!!errors.password}
+            helperText={errors.password ? `${errors.password.message}` : ""}
+            {...register("password")}
+          />
+        </div>
+        <StyledLoadingButton
+          type="submit"
+          variant="contained"
+          loading={loading}
         >
-          Регистрация
-        </span>
-      </Typography>
+          Войти
+        </StyledLoadingButton>
+        <div className={styles.authLocation}>
+          <p>У Вас нет аккаунта?</p>
+          <span onClick={() => navigate("/register")}>Регистрация</span>
+        </div>
+      </div>
     </>
   );
 };

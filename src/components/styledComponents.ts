@@ -1,57 +1,5 @@
 import { MenuOpen } from "@mui/icons-material";
-import {
-  Dialog,
-  Drawer,
-  FormControlLabel,
-  Menu,
-  Select,
-  TextField,
-  styled,
-} from "@mui/material";
-
-export const StyledInput = styled(TextField)({
-  width: "320px",
-  borderRadius: "10px",
-  "& .MuiFormLabel-root": {
-    "@media (max-width: 490px)": {
-      fontSize: "14px",
-    },
-  },
-  "& .MuiInputBase-input": {
-    "@media (max-width: 490px)": {
-      fontSize: "14px",
-    },
-  },
-
-  "@media (max-width: 490px)": {
-    width: "280px",
-  },
-});
-
-export const StyledSelect = styled(Select)({
-  "@media (max-width: 768px)": {
-    width: "320px",
-  },
-
-  "@media (max-width: 490px)": {
-    width: "280px",
-  },
-  "& .MuiOutlinedInput-root": {
-    height: "40px",
-  },
-  "& .MuiInputLabel-root": {
-    top: "-7px",
-
-    "@media (max-width: 490px)": {
-      fontSize: "14px",
-    },
-  },
-  "& .MuiSelect-select": {
-    "@media (max-width: 490px)": {
-      fontSize: "14px",
-    },
-  },
-});
+import { Dialog, Drawer, FormControlLabel, Menu, styled } from "@mui/material";
 
 export const StyledPopupOffice = styled(Dialog)({
   "& .MuiDialog-container": {

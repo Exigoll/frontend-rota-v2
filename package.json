@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 5174",
-    "build": "vite build",
+    "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview --port 5174"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "swiper": "^9.0.5",
     "tailwindcss": "^3.2.6",
     "vite-tsconfig-paths": "^4.0.7",
+    "vue-tsc": "^1.2.0",
     "yup": "^1.0.0"
   },
   "devDependencies": {
