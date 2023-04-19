@@ -1,10 +1,4 @@
-import {
-  Checkbox,
-  FormGroup,
-  MenuItem,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Checkbox, FormGroup, MenuItem, TextField } from "@mui/material";
 import React from "react";
 
 import StyledLoadingButton from "@/components/LoadingButton";
