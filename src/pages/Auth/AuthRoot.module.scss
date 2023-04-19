@@ -1,13 +1,13 @@
 .root {
-  @apply flex justify-center items-center h-[100vh] w-[100vw];
+  @apply flex justify-center items-center h-full w-full;
 }
 
 .formAuth {
-  @apply flex-1;
+  @apply flex flex-col w-full h-[100vh];
 }
 
 .wrapper {
-  @apply flex flex-col items-center justify-center max-w-[640px] m-auto p-[40px] rounded-[20px];
+  @apply flex flex-col items-center justify-center w-full m-auto p-[40px] rounded-[20px];
 }
 
 .formWrapper {

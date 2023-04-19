@@ -130,7 +130,7 @@ export const Register: React.FC<IPropsRegister> = (
         </StyledLoadingButton>
         <div className={styles.authLocation}>
           <p> У Вас уже есть аккаунт?</p>
-          <span onClick={() => navigate("/login")}>Регистрация</span>
+          <span onClick={() => navigate("/login")}>Вход</span>
         </div>
       </div>
     </>
