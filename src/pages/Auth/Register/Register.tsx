@@ -66,7 +66,7 @@ export const Register: React.FC<IPropsRegister> = (
             {...register("address")}
           />
           <TextField
-            type="text"
+            type="tel"
             label="Номер телефона"
             placeholder="Введите номер телефона"
             variant="outlined"
