@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { Footer } from "@/components/Footer";
-import { Header, LoginHeader } from "@/components/Header";
+import { LoginHeader } from "@/components/Header";
 
 import { AppErrors } from "@/common/errors";
 

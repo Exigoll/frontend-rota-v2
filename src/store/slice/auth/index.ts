@@ -9,6 +9,7 @@ const initialState: IAuthState = {
     id: null,
     email: "",
     fullName: "",
+    userName: "",
     phoneNumber: "",
     address: "",
     legalForm: "",
