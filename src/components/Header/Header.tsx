@@ -1,8 +1,8 @@
 import { FC } from "react";
 
+import { Office } from "@/components/Office";
 import { Navbar } from "@/components/ui/Navbar";
 import { Search } from "@/components/ui/Search";
-import { UserMenu } from "@/components/ui/UserMenu/UserMenu";
 
 import styles from "./Header.module.scss";
 
@@ -11,7 +11,7 @@ export const Header: FC = () => {
     <header className={styles.header}>
       <Navbar />
       <Search />
-      <UserMenu />
+      <Office />
     </header>
   );
 };

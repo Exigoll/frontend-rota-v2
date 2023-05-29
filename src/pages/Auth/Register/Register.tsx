@@ -28,6 +28,24 @@ export const Register: React.FC<IPropsRegister> = (
             {...register("email")}
           />
           <TextField
+            type="text"
+            label="Имя пользователя"
+            placeholder="Введите имя пользователя"
+            variant="outlined"
+            error={!!errors.userName}
+            helperText={errors.userName ? `${errors.userName.message}` : ""}
+            {...register("userName")}
+          />
+          <TextField
+            type="text"
+            label="Ф.И.О."
+            placeholder="Введите Ф.И.О."
+            variant="outlined"
+            error={!!errors.fullName}
+            helperText={errors.fullName ? `${errors.fullName.message}` : ""}
+            {...register("fullName")}
+          />
+          <TextField
             type="password"
             label="Пароль"
             placeholder="Введите пароль"
@@ -38,7 +56,7 @@ export const Register: React.FC<IPropsRegister> = (
           />
           <TextField
             type="password"
-            label="Пароль"
+            label="Повторите пароль"
             placeholder="Повторите пароль"
             variant="outlined"
             error={!!errors.confirmPassword}
@@ -46,15 +64,6 @@ export const Register: React.FC<IPropsRegister> = (
               errors.confirmPassword ? `${errors.confirmPassword.message}` : ""
             }
             {...register("confirmPassword")}
-          />
-          <TextField
-            type="text"
-            label="Ф.И.О."
-            placeholder="Введите Ф.И.О."
-            variant="outlined"
-            error={!!errors.fullName}
-            helperText={errors.fullName ? `${errors.fullName.message}` : ""}
-            {...register("fullName")}
           />
           <TextField
             type="text"

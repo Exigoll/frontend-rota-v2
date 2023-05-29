@@ -56,7 +56,7 @@ export const Navbar: FC = () => {
 
   return (
     <>
-      <div className="flex items-center gap-x-[5px]">
+      <div className={styles.wrapper}>
         <StyledMenuOpen
           className={styles.icon}
           onClick={() => setIsDrawerOpen(!isDrawerOpen)}

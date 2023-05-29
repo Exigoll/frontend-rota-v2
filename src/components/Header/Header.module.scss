@@ -1,11 +1,35 @@
 .header {
   @apply sticky top-0 flex items-center justify-between gap-x-[30px] w-full h-[70px] pr-[20px] py-[10px] bg-darkBlue z-[100];
 
+  @screen desktopXL {
+    @apply flex-wrap gap-y-[10px] h-[118px] pr-[15px];
+  }
+
   @screen tablet {
-    @apply flex-wrap gap-y-[10px] h-[112px] pr-[15px];
+    @apply h-[164px];
   }
 
   @screen mobile2XL {
     @apply pr-[10px];
+  }
+}
+
+.logo {
+  @apply h-full w-[300px] fill-white transitionIcon;
+
+  @screen desktop {
+    @apply w-[260px];
+  }
+
+  @screen tablet {
+    @apply px-[15px];
+  }
+
+  @screen tabletMin {
+    @apply hover:fill-peach;
+  }
+
+  @screen mobile2XL {
+    @apply w-[200px] px-[10px];
   }
 }

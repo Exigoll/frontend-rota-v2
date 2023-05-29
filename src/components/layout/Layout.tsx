@@ -1,10 +1,6 @@
 import { FC } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
-/* 
-Deleted?
-import { ILayout } from "@/common/types/layout";
-*/
 import { Footer } from "../Footer";
 import { Header } from "../Header";
 

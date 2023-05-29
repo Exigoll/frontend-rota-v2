@@ -29,16 +29,17 @@ interface IPublicUser {
   id: number | null;
   email: string;
   fullName: string;
+  userName: string;
   phoneNumber: string;
   address: string;
   legalForm: string;
   kindOfActivity: string;
   createdAt: string;
   updatedAt: string;
-  product: [IProduct];
+  product: [IAsset];
 }
 
-interface IProduct {
+interface IAsset {
   id: number | null;
   brand: string;
   descr: string;

@@ -5,11 +5,11 @@ const StyledLoadingButton = styled(LoadingButton)({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  maxWidth: "180px",
-  width: "100%",
-  height: "40px",
+  maxWidth: "320px",
+  width: "50%",
+  height: "46px",
   border: "1px solid transparent",
-  borderRadius: "10px",
+  borderRadius: "5px",
   backgroundColor: "#1b2f52",
   fontFamily: "'Inter', sans-serif",
   color: "#fff",
@@ -29,10 +29,10 @@ const StyledLoadingButton = styled(LoadingButton)({
   },
 
   "@media (max-width: 768px)": {
-    maxWidth: "140px",
-    height: "36px",
-    fontSize: "14px",
-    lineHeight: "14px",
+    //maxWidth: "140px",
+    //height: "36px",
+    //fontSize: "14px",
+    //lineHeight: "14px",
   },
 });
 

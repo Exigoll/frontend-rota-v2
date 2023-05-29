@@ -14,23 +14,44 @@ import {
 } from "@mui/icons-material";
 import { MenuItem } from "@mui/material";
 import { FC, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 import { StyledMenu } from "@/components/styledComponents";
 
 import styles from "./UserMenu.module.scss";
 
 const menuItems = [
-  { title: "Личный кабинет", icon: <House /> },
-  { title: "Баланс", icon: <AccountBalanceWallet /> },
-  { title: "Корзина", icon: <ShoppingCart /> },
-  { title: "Заказы", icon: <ViewQuilt /> },
-  { title: "Загрузка заказа из файла", icon: <DownloadForOffline /> },
-  { title: "Возвраты", icon: <AssignmentReturn /> },
-  { title: "Документы", icon: <Article /> },
-  { title: "Уставные документы", icon: <ContactPage /> },
-  { title: "Профиль", icon: <SwitchAccount /> },
-  { title: "Настройки", icon: <Settings /> },
-  { title: "Выход", icon: <ExitToApp /> },
+  { id: 0, patch: "office", title: "Личный кабинет", icon: <House /> },
+  {
+    id: 1,
+    patch: "office/balance",
+    title: "Баланс",
+    icon: <AccountBalanceWallet />,
+  },
+  { id: 2, patch: "office/cart", title: "Корзина", icon: <ShoppingCart /> },
+  { id: 3, patch: "office/orders", title: "Заказы", icon: <ViewQuilt /> },
+  {
+    id: 4,
+    patch: "office/upload-from-file",
+    title: "Загрузка заказа из файла",
+    icon: <DownloadForOffline />,
+  },
+  {
+    id: 5,
+    patch: "office/returns",
+    title: "Возвраты",
+    icon: <AssignmentReturn />,
+  },
+  { id: 6, patch: "office/documents", title: "Документы", icon: <Article /> },
+  {
+    id: 7,
+    patch: "office/statutory-documents",
+    title: "Уставные документы",
+    icon: <ContactPage />,
+  },
+  { id: 8, patch: "office/profile", title: "Профиль", icon: <SwitchAccount /> },
+  { id: 9, patch: "office/settings", title: "Настройки", icon: <Settings /> },
+  { id: 10, patch: "", title: "Выход", icon: <ExitToApp /> },
 ];
 
 export const UserMenu: FC = (): JSX.Element => {
@@ -66,14 +87,12 @@ export const UserMenu: FC = (): JSX.Element => {
       >
         <p className={styles.title}>ООО "РОТА"</p>
         {menuItems.map((item) => (
-          <MenuItem
-            key={item.title}
-            className="gap-y-[5px]"
-            onClick={handleClose}
-          >
-            {item.icon}
-            {item.title}
-          </MenuItem>
+          <NavLink to={item.patch} key={item.id}>
+            <MenuItem className="gap-y-[5px]" onClick={handleClose}>
+              {item.icon}
+              {item.title}
+            </MenuItem>
+          </NavLink>
         ))}
       </StyledMenu>
     </div>

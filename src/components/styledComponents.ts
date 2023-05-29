@@ -22,13 +22,15 @@ export const StyledCheckbox = styled(FormControlLabel)({
     top: "-7px",
   },
 
-  "& .MuiButtonBase-root": {
-    //padding: "0",
-  },
-
   "& .MuiFormControlLabel-label": {
     fontSize: "14px",
     lineHeight: "14px",
+
+    "@media (max-width: 490px)": {
+      width: "290px",
+      fontSize: "12px",
+      lineHeight: "12px",
+    },
   },
 
   "& .MuiSvgIcon-root": {
@@ -41,7 +43,7 @@ export const StylesDrawer = styled(Drawer)({
   top: "70px",
 
   "@media (max-width: 768px)": {
-    top: "112px",
+    top: "164px",
   },
 
   "& .MuiDrawer-paper": {
@@ -57,7 +59,7 @@ export const StylesDrawer = styled(Drawer)({
     boxShadow: "none",
 
     "@media (max-width: 768px)": {
-      top: "112px",
+      top: "164px",
     },
 
     "@media (max-width: 490px)": {
@@ -68,7 +70,7 @@ export const StylesDrawer = styled(Drawer)({
     top: "70px",
 
     "@media (max-width: 768px)": {
-      top: "112px",
+      top: "164px",
     },
   },
 });

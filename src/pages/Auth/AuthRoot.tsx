@@ -3,6 +3,9 @@ import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import { Footer } from "@/components/Footer";
+import { Header, LoginHeader } from "@/components/Header";
+
 import { AppErrors } from "@/common/errors";
 
 import { loginUser, registerUser } from "@/store/thunks";
@@ -14,7 +17,7 @@ import styles from "./AuthRoot.module.scss";
 import { Login } from "./Login";
 import { Register } from "./Register";
 
-const AuthRoot: FC = (): JSX.Element => {
+export const AuthRoot: FC = (): JSX.Element => {
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -62,31 +65,33 @@ const AuthRoot: FC = (): JSX.Element => {
   };
 
   return (
-    <div className={styles.root}>
-      <form
-        className={styles.formAuth}
-        onSubmit={handleSubmit(handleSubmitForm)}
-      >
-        <div className={styles.wrapper}>
-          {location.pathname === "/login" ? (
-            <Login
-              navigate={navigate}
-              register={register}
-              errors={errors}
-              loading={loading}
-            />
-          ) : location.pathname === "/register" ? (
-            <Register
-              navigate={navigate}
-              register={register}
-              errors={errors}
-              loading={loading}
-            />
-          ) : null}
-        </div>
-      </form>
+    <div className={styles.wrapperRoot}>
+      <LoginHeader />
+      <div className={styles.root}>
+        <form
+          className={styles.formAuth}
+          onSubmit={handleSubmit(handleSubmitForm)}
+        >
+          <div className={styles.wrapper}>
+            {location.pathname === "/login" ? (
+              <Login
+                navigate={navigate}
+                register={register}
+                errors={errors}
+                loading={loading}
+              />
+            ) : location.pathname === "/register" ? (
+              <Register
+                navigate={navigate}
+                register={register}
+                errors={errors}
+                loading={loading}
+              />
+            ) : null}
+          </div>
+        </form>
+      </div>
+      <Footer />
     </div>
   );
 };
-
-export default AuthRoot;

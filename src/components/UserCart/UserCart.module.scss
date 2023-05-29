@@ -1,0 +1,32 @@
+.cart {
+  @apply flex items-center gap-x-[9px] text-white max-w-[244px] w-full py-[4px] px-[9px] rounded-[10px] cursor-pointer;
+}
+
+.icon {
+  @apply relative;
+
+  span {
+    @apply absolute top-[-2px] left-[13px] flex items-center justify-center w-[15px] h-[15px] rounded-lg bg-red-700 font-normal;
+    font-size: 8px;
+  }
+}
+
+.info {
+  @apply flex flex-col gap-y-[2px];
+
+  p {
+    @apply text-[16px] leading-[16px];
+
+    @screen tablet {
+      @apply text-[14px] leading-[14px];
+    }
+  }
+
+  span {
+    @apply text-[14px] leading-[14px] font-normal;
+
+    @screen tablet {
+      @apply text-[12px] leading-[12px];
+    }
+  }
+}

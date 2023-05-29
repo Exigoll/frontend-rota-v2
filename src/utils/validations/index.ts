@@ -24,6 +24,10 @@ export const RegisterSchema = yup
       .string()
       .min(6, AppErrors.MinLength)
       .required(AppErrors.RequiredField),
+    userName: yup
+      .string()
+      .min(6, AppErrors.MinLength)
+      .required(AppErrors.RequiredField),
     address: yup
       .string()
       .min(6, AppErrors.MinLength)

@@ -1,0 +1,11 @@
+.office {
+  @apply flex items-center justify-between gap-x-[20px] max-w-[365px] w-full h-[40px];
+
+  @screen desktopXL {
+    @apply order-2;
+  }
+
+  @screen tablet {
+    @apply order-3 mx-auto my-0;
+  }
+}

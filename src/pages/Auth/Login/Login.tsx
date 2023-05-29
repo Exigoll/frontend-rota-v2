@@ -1,4 +1,4 @@
-import { TextField, Typography } from "@mui/material";
+import { TextField } from "@mui/material";
 import React from "react";
 
 import StyledLoadingButton from "@/components/LoadingButton";
@@ -14,7 +14,10 @@ export const Login: React.FC<IPropsLogin> = (
 
   return (
     <>
-      <div className={styles.formWrapper}>
+      <div
+        className={styles.formWrapper}
+        style={{ minHeight: "calc(100vh - 200px)" }}
+      >
         <h3 className={`titlePage m-0`}>Авторизация</h3>
         <div className={styles.inputWrapper}>
           <TextField

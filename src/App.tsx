@@ -3,11 +3,21 @@ import { Route, Routes } from "react-router-dom";
 import { Layout } from "@/components/layout";
 
 import { AboutPage } from "@/pages/AboutPage";
-import AuthRoot from "@/pages/Auth/AuthRoot";
+import { AuthRoot } from "@/pages/Auth/AuthRoot";
 import { ContactsPage } from "@/pages/ContactsPage";
 import { DeliveryPage } from "@/pages/DeliveryPage";
 import { DocumentFlowPage } from "@/pages/DocumentFlowPage";
 import { HomePage } from "@/pages/HomePage";
+import { OfficePage } from "@/pages/OfficePage";
+import { BalancePage } from "@/pages/OfficePage/BalancePage";
+import { CartPage } from "@/pages/OfficePage/CartPage";
+import { DocumentsPage } from "@/pages/OfficePage/DocumentsPage";
+import { OrdersPage } from "@/pages/OfficePage/OrdersPage";
+import { ProfilePage } from "@/pages/OfficePage/ProfilePage";
+import { ReturnsPage } from "@/pages/OfficePage/ReturnsPage";
+import { SettingsPage } from "@/pages/OfficePage/SettingsPage";
+import { StatutoryDocumentsPage } from "@/pages/OfficePage/StatutoryDocumentsPage";
+import { UploadFromFilesPage } from "@/pages/OfficePage/UploadFromFilesPage";
 import { ProviderPage } from "@/pages/ProviderPage";
 import { WarrantyReturnPage } from "@/pages/WarrantyReturnPage";
 import { WholesalePage } from "@/pages/WholesalePage";
@@ -28,6 +38,22 @@ function App() {
             <Route path="delivery" element={<DeliveryPage />} />
             <Route path="warrantyReturn" element={<WarrantyReturnPage />} />
             <Route path="documentFlow" element={<DocumentFlowPage />} />
+            <Route path="office" element={<OfficePage />} />
+            <Route path="office/balance" element={<BalancePage />} />
+            <Route path="office/cart" element={<CartPage />} />
+            <Route path="office/orders" element={<OrdersPage />} />
+            <Route
+              path="office/upload-from-file"
+              element={<UploadFromFilesPage />}
+            />
+            <Route path="office/returns" element={<ReturnsPage />} />
+            <Route path="office/documents" element={<DocumentsPage />} />
+            <Route
+              path="office/statutory-documents"
+              element={<StatutoryDocumentsPage />}
+            />
+            <Route path="office/profile" element={<ProfilePage />} />
+            <Route path="office/settings" element={<SettingsPage />} />
           </Route>
           <Route path="login" element={<AuthRoot />} />
           <Route path="register" element={<AuthRoot />} />

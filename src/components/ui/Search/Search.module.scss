@@ -1,12 +1,16 @@
 .search {
   @apply flex items-center justify-between w-full max-w-[600px] h-[40px] text-base font-medium;
 
+  @screen desktopXL {
+    @apply order-3 my-0 mx-auto;
+  }
+
   @screen desktop {
     @apply text-sm;
   }
 
   @screen tablet {
-    @apply order-3 max-w-full /* mx-auto my-0 */ m-0;
+    @apply order-2 my-0 mx-auto;
   }
 
   input {
