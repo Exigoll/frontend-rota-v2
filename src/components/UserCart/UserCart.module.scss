@@ -1,5 +1,9 @@
 .cart {
-  @apply flex items-center gap-x-[9px] text-white max-w-[244px] w-full py-[4px] px-[9px] rounded-[10px] cursor-pointer;
+  @apply flex items-center gap-x-[9px] max-w-[244px] w-full py-[4px] px-[9px] rounded-[10px] text-white bg-transparent cursor-pointer transitionButton will-change-transform active:scale-99;
+
+  @screen tabletMin {
+    @apply hover:bg-heavyDark;
+  }
 }
 
 .icon {

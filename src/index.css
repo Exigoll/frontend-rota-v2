@@ -8,7 +8,7 @@ body {
 }
 
 body {
-  @apply relative font-title font-bold text-base text-lightDark bg-white;
+  @apply relative font-title font-bold text-base text-lightDark bg-white overflow-y-scroll;
 }
 
 img {
