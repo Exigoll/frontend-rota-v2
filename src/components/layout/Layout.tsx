@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
-import { Footer } from "../Footer";
-import { Header } from "../Header";
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
 export const Layout: FC = (): JSX.Element => {
   const location = useLocation();

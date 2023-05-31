@@ -1,8 +1,8 @@
 import { FC } from "react";
 
+import { Navbar } from "@/components/Navbar";
 import { Office } from "@/components/Office";
-import { Navbar } from "@/components/ui/Navbar";
-import { Search } from "@/components/ui/Search";
+import { Search } from "@/components/Search";
 
 import styles from "./Header.module.scss";
 

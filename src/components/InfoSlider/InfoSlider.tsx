@@ -3,9 +3,9 @@ import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 
-import styles from "./Info.module.scss";
+import styles from "./InfoSlider.module.scss";
 
-const sliderItems = [
+const listItems = [
   {
     id: 0,
     title:
@@ -70,7 +70,7 @@ export const InfoSlider: FC = (): JSX.Element => {
           dynamicBullets: true,
         }}
       >
-        {sliderItems.map((item) => (
+        {listItems.map((item) => (
           <SwiperSlide key={item.id} className={styles.slide}>
             <div className={styles.image}>
               <img src={item.pathImg} alt="Image" />
