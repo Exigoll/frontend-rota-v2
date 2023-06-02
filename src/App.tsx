@@ -12,6 +12,7 @@ import { OfficePage } from "@/pages/OfficePage";
 import { BalancePage } from "@/pages/OfficePage/BalancePage";
 import { CartPage } from "@/pages/OfficePage/CartPage";
 import { DocumentsPage } from "@/pages/OfficePage/DocumentsPage";
+import { FavoritesPage } from "@/pages/OfficePage/FavoritesPage";
 import { OrdersPage } from "@/pages/OfficePage/OrdersPage";
 import { ProfilePage } from "@/pages/OfficePage/ProfilePage";
 import { ReturnsPage } from "@/pages/OfficePage/ReturnsPage";
@@ -41,6 +42,7 @@ function App() {
             <Route path="office" element={<OfficePage />} />
             <Route path="office/balance" element={<BalancePage />} />
             <Route path="office/cart" element={<CartPage />} />
+            <Route path="office/favorites" element={<FavoritesPage />} />
             <Route path="office/orders" element={<OrdersPage />} />
             <Route
               path="office/upload-from-file"

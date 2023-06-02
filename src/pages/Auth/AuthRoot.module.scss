@@ -17,11 +17,11 @@
 .formWrapper {
   @apply flex flex-col items-center justify-center gap-y-[20px] max-w-[360px] w-full;
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply gap-y-[15px];
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply gap-y-[10px];
   }
 }
@@ -29,7 +29,7 @@
 .authLocation {
   @apply flex font-text text-base gap-x-[5px];
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply text-sm;
   }
 
@@ -45,7 +45,7 @@
 .inputWrapper {
   @apply flex flex-col gap-y-[20px] w-full;
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply gap-y-[15px];
   }
 }

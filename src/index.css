@@ -18,11 +18,11 @@ img {
 main {
   @apply grow py-[50px];
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply py-[40px];
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply py-[30px];
   }
 }
@@ -54,11 +54,11 @@ select {
 .container {
   @apply max-w-[1475px] my-0 mx-auto px-[20px];
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply px-[15px];
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply px-[10px];
   }
 }
@@ -66,11 +66,11 @@ select {
 .section {
   @apply pb-[50px];
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply pb-[40px];
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply pb-[30px];
   }
 }
@@ -83,14 +83,14 @@ select {
   bottom: 2% !important;
   height: 20px !important;
 
-  @screen tablet {
+  @screen screenMax768 {
     display: none;
   }
 }
 .swiper-pagination-bullet {
   @apply w-[14px] h-[14px] bg-white;
 
-  @screen desktop2XL {
+  @screen screenMax1366 {
     @apply w-[12px] h-[12px];
   }
 }

@@ -1,7 +1,7 @@
 .cart {
   @apply flex items-center gap-x-[9px] max-w-[244px] w-full py-[4px] px-[9px] rounded-[10px] text-white bg-transparent cursor-pointer transitionButton will-change-transform active:scale-99;
 
-  @screen tabletMin {
+  @screen screenMin769 {
     @apply hover:bg-heavyDark;
   }
 }
@@ -21,7 +21,7 @@
   p {
     @apply text-[16px] leading-[16px];
 
-    @screen tablet {
+    @screen screenMax768 {
       @apply text-[14px] leading-[14px];
     }
   }
@@ -29,7 +29,7 @@
   span {
     @apply text-[14px] leading-[14px] font-normal;
 
-    @screen tablet {
+    @screen screenMax768 {
       @apply text-[12px] leading-[12px];
     }
   }

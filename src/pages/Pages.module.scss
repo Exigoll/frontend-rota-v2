@@ -1,30 +1,30 @@
 .textContent {
   @apply flex flex-col gap-y-[20px] indent-[50px] text-xl text-justify font-text font-normal;
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply gap-y-[15px] indent-[40px] text-lg;
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply gap-y-[10px] indent-[30px] text-base;
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply indent-[20px] text-sm;
   }
 }
 .text {
   @apply indent-[50px] text-xl text-justify font-text font-normal;
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply text-lg indent-[40px];
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply text-base indent-[30px];
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply text-sm indent-[20px];
   }
 
@@ -36,11 +36,11 @@
 .listWrapper {
   @apply flex flex-col gap-y-[50px] font-text;
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply gap-y-[40px];
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply gap-y-[30px];
   }
 }
@@ -48,7 +48,7 @@
 .sublistWrapper {
   @apply flex flex-col gap-y-[20px] w-[90%] my-[0] mx-auto;
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply gap-y-[15px];
   }
 }
@@ -56,15 +56,15 @@
 .list {
   @apply flex flex-col gap-y-[20px];
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply gap-y-[15px];
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply gap-y-[12px];
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply gap-y-[10px];
   }
 }
@@ -72,15 +72,15 @@
 .listTitle {
   @apply font-title font-bold text-2xl;
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply text-xl;
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply text-lg;
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply text-base;
   }
 }
@@ -88,15 +88,15 @@
 .sublistTitle {
   @apply font-title font-bold text-xl;
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply text-lg;
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply text-base;
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply text-sm;
   }
 }
@@ -104,15 +104,15 @@
 .sublist {
   @apply flex flex-col gap-y-[20px];
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply gap-y-[15px];
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply gap-y-[12px];
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply gap-y-[10px];
   }
 }
@@ -120,30 +120,30 @@
 .sublistItem {
   @apply flex items-center gap-x-[15px];
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply gap-x-[15px];
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply gap-x-[12px];
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply gap-x-[10px];
   }
 
   span {
     @apply flex items-center justify-center w-full max-w-[30px] h-[30px] text-xl rounded-[5px] text-white bg-lightDark;
 
-    @screen desktop {
+    @screen screenMax1280 {
       @apply max-w-[28px] h-[28px] text-lg;
     }
 
-    @screen tablet {
+    @screen screenMax768 {
       @apply max-w-[26px] h-[26px] text-base;
     }
 
-    @screen mobile2XL {
+    @screen screenMax490 {
       @apply max-w-[24px] h-[24px] text-sm;
     }
   }
@@ -151,15 +151,15 @@
   p {
     @apply font-normal text-xl;
 
-    @screen desktop {
+    @screen screenMax1280 {
       @apply text-lg;
     }
 
-    @screen tablet {
+    @screen screenMax768 {
       @apply text-base;
     }
 
-    @screen mobile2XL {
+    @screen screenMax490 {
       @apply text-sm;
     }
   }
@@ -169,15 +169,15 @@
 .listText {
   @apply text-xl;
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply text-lg;
   }
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply text-base;
   }
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply text-sm;
   }
 

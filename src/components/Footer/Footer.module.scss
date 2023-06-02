@@ -5,7 +5,7 @@
 .text {
   @apply text-white font-text text-base font-normal text-center;
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply text-sm;
   }
 }

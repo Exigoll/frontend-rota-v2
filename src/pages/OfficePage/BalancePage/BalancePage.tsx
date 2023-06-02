@@ -4,8 +4,8 @@ import styles from "./BalancePage.module.scss";
 
 export const BalancePage: FC = (): JSX.Element => {
   return (
-    <div>
+    <section>
       <h1>BalancePage</h1>
-    </div>
+    </section>
   );
 };

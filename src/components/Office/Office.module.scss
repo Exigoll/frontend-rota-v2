@@ -1,11 +1,11 @@
 .office {
   @apply flex items-center justify-between gap-x-[20px] max-w-[365px] w-full h-[40px];
 
-  @screen desktopXL {
+  @screen screenMax1280 {
     @apply order-2;
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply order-3 mx-auto my-0;
   }
 }

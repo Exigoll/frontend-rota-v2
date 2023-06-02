@@ -8,16 +8,15 @@ module.exports = {
 	],
 	theme: {
 		screens: {
-			"desktop3XL": { "max": "1920px" },
-			"desktop2XL": { "max": "1366px" },
-			"desktopXL": { "max": "1280px" },
-			"desktop": { "max": "1024px" },
-			"tabletXL": { "max": "962px" },
-			"tabletMin": {"min": "769px"},
-			"tablet": { "max": "768px" },
-			"mobile2XL": { "max": "490px" },
-			"mobileXL": { "max": "414px" },
-			"mobile": { "max": "375px" },
+			"screenMax1920": { "max": "1920px" },
+			"screenMax1366": { "max": "1366px" },
+			"screenMax1280": { "max": "1280px" },
+			"screenMax1024": { "max": "1024px" },
+			"screenMax680": { "max": "680px" },
+			"screenMax768": { "max": "768px" },
+			"screenMax490": { "max": "490px" },
+			"screenMax375": { "max": "375px" },
+			"screenMin769": {"min": "769px"},
 		},
 		extend: {
 			fontFamily: {
