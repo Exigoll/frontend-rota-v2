@@ -20,6 +20,8 @@ import { SettingsPage } from "@/pages/OfficePage/SettingsPage";
 import { StatutoryDocumentsPage } from "@/pages/OfficePage/StatutoryDocumentsPage";
 import { UploadFromFilesPage } from "@/pages/OfficePage/UploadFromFilesPage";
 import { ProviderPage } from "@/pages/ProviderPage";
+import SearchResult from "@/pages/SearchResult/SearchResult";
+import { SingleAssetPage } from "@/pages/SingleAssetPage";
 import { WarrantyReturnPage } from "@/pages/WarrantyReturnPage";
 import { WholesalePage } from "@/pages/WholesalePage";
 
@@ -56,6 +58,7 @@ function App() {
             />
             <Route path="office/profile" element={<ProfilePage />} />
             <Route path="office/settings" element={<SettingsPage />} />
+            <Route path="search-result" element={<SearchResult />}></Route>
           </Route>
           <Route path="login" element={<AuthRoot />} />
           <Route path="register" element={<AuthRoot />} />

@@ -10,22 +10,18 @@ export interface IPropsLogin<
   loading: boolean;
 }
 
-export interface IPropsRegister extends IPropsLogin {
-  //setRepeatPassword: (value: string) => void;
-  //setFullName: (value: string) => void;
-  //setPhoneNumber: (value: string) => void;
-  //setAddress: (value: string) => void;
-  //setLegalForm: (value: string) => void;
-  //setKindOfActivity: (value: string) => void;
-}
+export interface IPropsRegister extends IPropsLogin {}
 
 export interface IAuthState {
-  user: IPublicUser;
+  user: {
+    user: IPublicUser;
+    token: string;
+  };
   isLogged: boolean;
   isLoading: boolean;
 }
 
-interface IPublicUser {
+export interface IPublicUser {
   id: number | null;
   email: string;
   fullName: string;
@@ -36,10 +32,10 @@ interface IPublicUser {
   kindOfActivity: string;
   createdAt: string;
   updatedAt: string;
-  product: [IAsset];
+  products: [IProducts];
 }
 
-interface IAsset {
+interface IProducts {
   id: number | null;
   brand: string;
   descr: string;
@@ -56,6 +52,7 @@ export interface ILoginData {
 
 export interface IRegisterData extends ILoginData {
   fullName: string;
+  userName: string;
   phoneNumber: string;
   address: string;
   legalForm: string;

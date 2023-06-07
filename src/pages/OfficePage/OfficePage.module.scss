@@ -1,3 +1,7 @@
+.officeWrapper {
+  @apply flex flex-col gap-y-[30px];
+}
+
 .menuList {
   @apply grid grid-cols-3 grid-rows-4 gap-x-[20px] gap-y-[20px];
 
@@ -19,18 +23,18 @@
 }
 
 .menuitem {
-  @apply flex items-center bg-darkBlue rounded-[10px] h-[100px] transition-all boxShadow;
+  @apply flex items-center bg-darkBlue rounded-[10px] h-[100px] transition-all boxShadow will-change-transform;
 
   &:hover {
     .menuLink {
-      @apply bg-white text-darkBlue;
+      @apply bg-white text-peach;
     }
 
     .info {
-      @apply text-darkBlue;
+      @apply text-peach;
 
       &:before {
-        @apply bg-darkBlue;
+        @apply bg-peach;
       }
     }
   }

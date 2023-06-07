@@ -1,5 +1,5 @@
 .search {
-  @apply flex items-center justify-between w-full max-w-[600px] h-[40px] text-base font-medium;
+  @apply relative flex items-center justify-between w-full max-w-[600px] h-[40px] text-base font-medium;
 
   @screen screenMax1280 {
     @apply order-3 my-0 mx-auto;
@@ -54,4 +54,13 @@
       @apply fill-white w-[24px] h-[24px];
     }
   }
+}
+
+.emptySearch {
+  @apply absolute bottom-[-40px] left-[25%] flex items-center justify-center h-[30px] w-[300px] bg-darkBlue rounded-[5px] text-peach font-bold transition-all;
+
+  @apply screenMax768:bottom-[-20px] screenMax768:bg-transparent screenMax768:h-[20px];
+
+  @apply screenMax490:left-[20%];
+  @apply screenMax375:left-[10%];
 }

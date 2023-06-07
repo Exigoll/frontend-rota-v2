@@ -26,7 +26,10 @@ export const OfficePage: FC = (): JSX.Element => {
   return (
     <section>
       <div className="container">
-        <ul className={styles.menuList}>{renderedItems}</ul>
+        <div className={styles.officeWrapper}>
+          <div className={styles.userInfo}></div>
+          <ul className={styles.menuList}>{renderedItems}</ul>
+        </div>
       </div>
     </section>
   );
