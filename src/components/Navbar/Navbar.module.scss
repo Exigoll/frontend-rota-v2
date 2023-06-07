@@ -1,11 +1,11 @@
 .wrapper {
   @apply flex items-center gap-x-[5px];
 
-  @screen desktopXL {
+  @screen screenMax1280 {
     @apply order-1;
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply w-full;
   }
 }
@@ -13,15 +13,15 @@
 .logo {
   @apply h-full w-[300px] fill-white transitionIcon;
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply w-[260px];
   }
 
-  @screen tabletMin {
+  @screen screenMin769 {
     @apply hover:fill-peach;
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply w-[200px];
   }
 }
@@ -29,7 +29,7 @@
 .navbar {
   @apply w-full flex flex-col pt-[28px] pb-[120px];
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply pt-[24px];
   }
 }
@@ -37,7 +37,7 @@
 .menu {
   @apply flex flex-col gap-y-3 w-full;
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply top-[60px];
   }
 }
@@ -50,19 +50,19 @@
   @apply flex items-center gap-x-[15px] w-full px-[20px] font-title font-bold text-white text-xl;
   transition: all 0.3s ease-in-out;
 
-  @screen desktop2XL {
+  @screen screenMax1366 {
     @apply text-lg;
   }
 
-  @screen tabletMin {
+  @screen screenMin769 {
     @apply hover:bg-white hover:text-peach;
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply text-base;
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply text-sm;
   }
 }
@@ -71,15 +71,15 @@
   @apply flex items-center gap-x-[15px] w-full px-[20px] font-title font-bold  text-xl bg-white text-peach;
   transition: all 0.3s ease-in-out;
 
-  @screen desktop2XL {
+  @screen screenMax1366 {
     @apply text-lg;
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply text-base;
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply text-sm;
   }
 }
@@ -93,19 +93,19 @@
   @apply flex items-center gap-x-[15px] mx-[20px] font-normal text-white text-base font-text;
   transition: all 0.3s ease-in-out;
 
-  @screen desktop2XL {
+  @screen screenMax1366 {
     @apply text-lg;
   }
 
-  @screen tabletMin {
+  @screen screenMin769 {
     @apply hover:text-peach;
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply text-base;
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply text-sm;
   }
 }

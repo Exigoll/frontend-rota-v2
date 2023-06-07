@@ -1,11 +1,13 @@
 import { AccountCircle } from "@mui/icons-material";
 import {
   AccountBalanceWallet,
+  ArrowCircleLeft,
   Article,
   AssignmentReturn,
   ContactPage,
   DownloadForOffline,
   ExitToApp,
+  Favorite,
   House,
   Settings,
   ShoppingCart,
@@ -20,49 +22,138 @@ import { StyledMenu } from "@/components/styledComponents";
 
 import styles from "./UserMenu.module.scss";
 
-const menuItems = [
-  { id: 0, patch: "office", title: "Личный кабинет", icon: <House /> },
+export const menuItems = [
+  {
+    id: 0,
+    href: "office",
+    hrefSub: "",
+    title: "Личный кабинет",
+    descr: "",
+    icon: <House />,
+  },
   {
     id: 1,
-    patch: "office/balance",
+    href: "/",
+    hrefSub: "/",
+    title: "Главная страница",
+    descr: "Вернуться на главную страницу",
+    icon: <ArrowCircleLeft />,
+  },
+  {
+    id: 2,
+    href: "office/balance",
+    hrefSub: "balance",
     title: "Баланс",
+    descr: "Информация о Вашем счете",
     icon: <AccountBalanceWallet />,
   },
-  { id: 2, patch: "office/cart", title: "Корзина", icon: <ShoppingCart /> },
-  { id: 3, patch: "office/orders", title: "Заказы", icon: <ViewQuilt /> },
+  {
+    id: 3,
+    href: "office/cart",
+    hrefSub: "cart",
+    title: "Корзина",
+    descr: "Список товаров в корзине",
+    icon: <ShoppingCart />,
+  },
   {
     id: 4,
-    patch: "office/upload-from-file",
-    title: "Загрузка заказа из файла",
-    icon: <DownloadForOffline />,
+    href: "office/favorites",
+    hrefSub: "favorites",
+    title: "Избранное",
+    descr: "Список избранных товаров",
+    icon: <Favorite />,
   },
   {
     id: 5,
-    patch: "office/returns",
-    title: "Возвраты",
-    icon: <AssignmentReturn />,
+    href: "office/orders",
+    hrefSub: "orders",
+    title: "Заказы",
+    descr: "Информация о Ваших заказах",
+    icon: <ViewQuilt />,
   },
-  { id: 6, patch: "office/documents", title: "Документы", icon: <Article /> },
+  {
+    id: 6,
+    href: "office/upload-from-file",
+    hrefSub: "upload-from-file",
+    title: "Загрузка заказа из файла",
+    descr: "Форматы: .xls, .docx, .pdf, .txt",
+    icon: <DownloadForOffline />,
+  },
   {
     id: 7,
-    patch: "office/statutory-documents",
+    href: "office/returns",
+    hrefSub: "returns",
+    title: "Возвраты",
+    descr: "Список оформленных возвратов",
+    icon: <AssignmentReturn />,
+  },
+  {
+    id: 8,
+    href: "office/documents",
+    hrefSub: "documents",
+    title: "Документы",
+    descr: "Шаблоны документов",
+    icon: <Article />,
+  },
+  {
+    id: 9,
+    href: "office/statutory-documents",
+    hrefSub: "statutory-documents",
     title: "Уставные документы",
+    descr: "Загрузка уставных документов",
     icon: <ContactPage />,
   },
-  { id: 8, patch: "office/profile", title: "Профиль", icon: <SwitchAccount /> },
-  { id: 9, patch: "office/settings", title: "Настройки", icon: <Settings /> },
-  { id: 10, patch: "", title: "Выход", icon: <ExitToApp /> },
+  {
+    id: 10,
+    href: "office/profile",
+    hrefSub: "profile",
+    title: "Профиль",
+    descr: "Информация об учетной записи",
+    icon: <SwitchAccount />,
+  },
+  {
+    id: 11,
+    href: "office/settings",
+    hrefSub: "settings",
+    title: "Настройки",
+    descr: "Изменение учетной записи",
+    icon: <Settings />,
+  },
+  {
+    id: 12,
+    href: "",
+    hrefSub: "",
+    title: "Выход",
+    descr: "Выход из учетной записи",
+    icon: <ExitToApp />,
+  },
 ];
 
 export const UserMenu: FC = (): JSX.Element => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const renderedItems = menuItems.map((item) => {
+    if (item.id !== 1) {
+      return (
+        <NavLink to={item.href} key={item.id}>
+          <MenuItem className="gap-y-[5px]" onClick={handleClose}>
+            {item.icon}
+            {item.title}
+          </MenuItem>
+        </NavLink>
+      );
+    }
+    return null;
+  });
 
   return (
     <div>
@@ -86,14 +177,7 @@ export const UserMenu: FC = (): JSX.Element => {
         }}
       >
         <p className={styles.title}>ООО "РОТА"</p>
-        {menuItems.map((item) => (
-          <NavLink to={item.patch} key={item.id}>
-            <MenuItem className="gap-y-[5px]" onClick={handleClose}>
-              {item.icon}
-              {item.title}
-            </MenuItem>
-          </NavLink>
-        ))}
+        {renderedItems}
       </StyledMenu>
     </div>
   );

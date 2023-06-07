@@ -42,6 +42,10 @@ export const StyledCheckbox = styled(FormControlLabel)({
 export const StylesDrawer = styled(Drawer)({
   top: "70px",
 
+  "@media (max-width: 1280px)": {
+    top: "118px",
+  },
+
   "@media (max-width: 768px)": {
     top: "164px",
   },
@@ -58,6 +62,10 @@ export const StylesDrawer = styled(Drawer)({
     borderRadius: "0",
     boxShadow: "none",
 
+    "@media (max-width: 1280px)": {
+      top: "118px",
+    },
+
     "@media (max-width: 768px)": {
       top: "164px",
     },
@@ -68,6 +76,10 @@ export const StylesDrawer = styled(Drawer)({
   },
   "& .MuiModal-backdrop": {
     top: "70px",
+
+    "@media (max-width: 1280px)": {
+      top: "118px",
+    },
 
     "@media (max-width: 768px)": {
       top: "164px",

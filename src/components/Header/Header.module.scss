@@ -1,15 +1,15 @@
 .header {
   @apply sticky top-0 flex items-center justify-between gap-x-[30px] w-full h-[70px] pr-[20px] py-[10px] bg-darkBlue z-[100];
 
-  @screen desktopXL {
+  @screen screenMax1280 {
     @apply flex-wrap gap-y-[10px] h-[118px] pr-[15px];
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply h-[164px];
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply pr-[10px];
   }
 }
@@ -17,19 +17,19 @@
 .logo {
   @apply h-full w-[300px] fill-white transitionIcon;
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply w-[260px];
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply px-[15px];
   }
 
-  @screen tabletMin {
+  @screen screenMin769 {
     @apply hover:fill-peach;
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply w-[200px] px-[10px];
   }
 }

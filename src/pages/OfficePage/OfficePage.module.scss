@@ -1,0 +1,117 @@
+.officeWrapper {
+  @apply flex flex-col gap-y-[30px];
+}
+
+.menuList {
+  @apply grid grid-cols-3 grid-rows-4 gap-x-[20px] gap-y-[20px];
+
+  @screen screenMax1366 {
+    @apply gap-x-[15px] gap-y-[15px];
+  }
+
+  @screen screenMax1280 {
+    @apply grid-cols-2 grid-rows-5;
+  }
+
+  @screen screenMax680 {
+    @apply grid-cols-1 grid-rows-6 gap-x-0;
+  }
+
+  @screen screenMax490 {
+    @apply gap-y-[10px];
+  }
+}
+
+.menuitem {
+  @apply flex items-center bg-darkBlue rounded-[10px] h-[100px] transition-all boxShadow will-change-transform;
+
+  &:hover {
+    .menuLink {
+      @apply bg-white text-peach;
+    }
+
+    .info {
+      @apply text-peach;
+
+      &:before {
+        @apply bg-peach;
+      }
+    }
+  }
+
+  &:active {
+    @apply scale-99;
+  }
+
+  @screen screenMax1366 {
+    @apply h-[80px];
+  }
+
+  @screen screenMax490 {
+    @apply h-[60px];
+  }
+}
+
+.menuLink {
+  @apply flex items-center gap-x-[15px] w-full p-[20px] text-white rounded-[8px] transition-all;
+
+  @screen screenMax1366 {
+    @apply gap-x-[10px] p-[15px];
+  }
+
+  @screen screenMax490 {
+    @apply gap-x-[10px] px-[15px] py-[8px];
+  }
+
+  svg {
+    @apply w-[50px] h-[50px];
+
+    @screen screenMax1366 {
+      @apply w-[40px] h-[40px];
+    }
+
+    @screen screenMax490 {
+      @apply w-[30px] h-[30px];
+    }
+  }
+}
+
+.info {
+  @apply relative flex flex-col gap-y-[12px] w-full text-white transition-all;
+
+  @screen screenMax1366 {
+    @apply gap-y-[10px];
+  }
+
+  &:before {
+    @apply content-[""] absolute top-[55%] w-full h-[2px] bg-white;
+
+    @screen screenMax490 {
+      @apply h-[1px];
+    }
+  }
+
+  h3 {
+    @apply font-bold text-[24px] leading-[29px];
+
+    @screen screenMax1366 {
+      @apply text-[18px] leading-[23px];
+    }
+
+    @screen screenMax490 {
+      @apply text-[16px] leading-[19px];
+    }
+  }
+
+  p {
+    @apply font-normal text-[16px] leading-[19px];
+
+    @screen screenMax1366 {
+      @apply text-[14px] leading-[17px];
+    }
+
+    @screen screenMax490 {
+      @apply text-[12px] leading-[15px];
+    }
+  }
+}

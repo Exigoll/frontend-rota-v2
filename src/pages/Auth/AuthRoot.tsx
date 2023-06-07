@@ -8,7 +8,7 @@ import { LoginHeader } from "@/components/Header";
 
 import { AppErrors } from "@/common/errors";
 
-import { loginUser, registerUser } from "@/store/thunks";
+import { loginUser, registerUser } from "@/store/thunks/auth";
 
 import { useAppDispatch, useAppSelector } from "@/utils/hooks";
 import { LoginSchema, RegisterSchema } from "@/utils/validations";
@@ -19,8 +19,8 @@ import { Register } from "./Register";
 
 export const AuthRoot: FC = (): JSX.Element => {
   const location = useLocation();
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const loading = useAppSelector((state) => state.auth.isLoading);
   const {
     register,
@@ -48,6 +48,7 @@ export const AuthRoot: FC = (): JSX.Element => {
             email: data.email,
             password: data.password,
             fullName: data.fullName,
+            userName: data.userName,
             address: data.address,
             phoneNumber: data.phoneNumber,
             legalForm: data.legalForm,

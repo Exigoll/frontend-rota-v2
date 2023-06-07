@@ -4,8 +4,8 @@ import styles from "./UploadFromFilesPage.module.scss";
 
 export const UploadFromFilesPage: FC = (): JSX.Element => {
   return (
-    <div>
+    <section>
       <h1>UploadFromFilesPage</h1>
-    </div>
+    </section>
   );
 };

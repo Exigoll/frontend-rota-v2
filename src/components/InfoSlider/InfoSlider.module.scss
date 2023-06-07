@@ -1,19 +1,19 @@
 .slider {
   @apply max-w-[1435px] h-[400px] rounded-[20px] cursor-pointer;
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply h-[350px];
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply h-[250px];
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply h-[200px];
   }
 
-  @screen mobile {
+  @screen screenMax375 {
     @apply h-[180px];
   }
 }
@@ -39,23 +39,23 @@
 .text {
   @apply absolute bottom-[10%] left-[3%] max-w-[55%] text-white text-4xl text-left font-bold z-[2];
 
-  @screen desktop {
+  @screen screenMax1280 {
     @apply text-3xl;
   }
 
-  @screen tabletXL {
+  @screen screenMax1024 {
     @apply text-2xl;
   }
 
-  @screen tablet {
+  @screen screenMax768 {
     @apply text-xl;
   }
 
-  @screen mobile2XL {
+  @screen screenMax490 {
     @apply text-lg max-w-[70%];
   }
 
-  @screen mobile {
+  @screen screenMax375 {
     @apply text-base max-w-[85%];
   }
 }

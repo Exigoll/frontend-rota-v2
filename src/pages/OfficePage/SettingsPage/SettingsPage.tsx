@@ -4,8 +4,8 @@ import styles from "./SettingsPage.module.scss";
 
 export const SettingsPage: FC = (): JSX.Element => {
   return (
-    <div>
+    <section>
       <h1>SettingsPage</h1>
-    </div>
+    </section>
   );
 };
