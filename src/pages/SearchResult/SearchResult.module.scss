@@ -1,0 +1,27 @@
+.searchResultWrapper {
+  @apply flex flex-col gap-y-[20px];
+}
+
+.table {
+  @apply flex flex-col w-full border-heavyDark border-[1px];
+}
+
+.tableHead {
+  @apply flex items-center justify-between w-full border-heavyDark border-[1px];
+
+  tr {
+    @apply border-heavyDark border-[1px];
+  }
+}
+
+.counter {
+  @apply flex items-center justify-center gap-x-[6px] text-sm leading-[0];
+
+  button {
+    @apply flex justify-center items-center bg-peach rounded-[50px] w-[20px] h-[20px] leading-[0] text-white font-bold;
+  }
+}
+
+.cartButton {
+  @apply transition-all hover:text-peach;
+}
