@@ -47,9 +47,12 @@ export const getTopPriceData = createAsyncThunk(
   }
 );
 
-export const createWatchListRecord = createAsyncThunk(
+export const createProductsRecord = createAsyncThunk(
   "products/create",
-  (data: { name: string; assetId: string }, { rejectWithValue }) => {
+  (
+    data: { brand: string; descr: string; article: string },
+    { rejectWithValue }
+  ) => {
     try {
       return instanceAuth.post("products/create", data);
     } catch (error: any) {
