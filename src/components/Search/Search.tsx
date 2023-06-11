@@ -25,10 +25,11 @@ export const Search: FC = (): JSX.Element => {
       if (Array.isArray(data)) {
         const searchResults = data.filter(
           (item) =>
-            item.name && item.name.toLowerCase().includes(query.toLowerCase())
+            item.number &&
+            item.number.toLowerCase().includes(query.toLowerCase())
         );
 
-        navigate("/search-result", { state: { searchResults } });
+        navigate("/search-results", { state: { searchResults } });
         setQuery("");
       }
     } catch (error) {
@@ -36,9 +37,16 @@ export const Search: FC = (): JSX.Element => {
     }
   };
 
-  const handleInputChange = (event: any) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);
     setError("");
+  };
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      handleSearch();
+    }
   };
 
   return (
@@ -48,6 +56,7 @@ export const Search: FC = (): JSX.Element => {
         placeholder="Введите артикул детали"
         value={query}
         onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
       />
       <button type="submit" onClick={handleSearch}>
         <SearchIcon />

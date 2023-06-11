@@ -58,7 +58,7 @@ function App() {
             />
             <Route path="office/profile" element={<ProfilePage />} />
             <Route path="office/settings" element={<SettingsPage />} />
-            <Route path="search-result" element={<SearchResult />}></Route>
+            <Route path="search-results" element={<SearchResult />}></Route>
           </Route>
           <Route path="login" element={<AuthRoot />} />
           <Route path="register" element={<AuthRoot />} />
