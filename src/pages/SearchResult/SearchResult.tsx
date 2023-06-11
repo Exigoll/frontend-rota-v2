@@ -18,6 +18,7 @@ const SearchResult: FC = (): JSX.Element => {
   const location = useLocation();
   const navigate = useNavigate();
   const searchResults = location.state?.searchResults || [];
+  console.log(searchResults);
 
   return (
     <div className="container">

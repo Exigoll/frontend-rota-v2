@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getProductsElements } from "@/store/thunks/products";
+import { getProductsCart } from "@/store/thunks/products";
 
 const initialState: any = {
-  assets: [],
+  products: [],
+  cartProducts: [],
 };
 
 export const productsSlice = createSlice({
@@ -11,8 +12,8 @@ export const productsSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(getProductsElements.fulfilled, (state, action) => {
-      state.assets = action.payload;
+    builder.addCase(getProductsCart.fulfilled, (state, action) => {
+      state.cartProducts.push(action.payload);
     });
   },
 });
